@@ -7,23 +7,17 @@
         <link rel="shortcut icon" href="{{ asset('assets/media/fav.ico') }}">
         <meta name="description" content="Latest updates and statistic charts">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-        {{-- {{-- <script src="{{ asset('assets/webfont/1.6.16/webfont.js')}}"></script>
-        <script>
-            WebFont.load({
-                google: {"families":["Poppins:300,400,500,600,700"]},
-                active: function() {
-                    sessionStorage.fonts = true;
-                }
-            });
-        </script>
-        @yield('css') --}}
+        <link href="{{ asset('css/asset/bootstrap.min.css') }}" rel="stylesheet" type="text/css" />
         <link href="{{ asset('css/app.css') }}" rel="stylesheet" type="text/css" />
-        {{-- <link href="{{ asset('assets/css/style.bundle.css') }}" rel="stylesheet" type="text/css" />
-        <link href="{{ asset('assets/css/overrides.css') }}" rel="stylesheet" type="text/css" />
-        <link href="{{ asset('assets/css/styleH.css') }}" rel="stylesheet" type="text/css" />
-        <link href="{{ asset('assets/css/header-override.css') }}" rel="stylesheet" type="text/css" />
-        <link href="{{ asset('assets/css/animate.css') }}" rel="stylesheet" type="text/css" />
-        <link href="{{ asset('assets/css/responsiveH.css') }}" rel="stylesheet" type="text/css" /> --}} --}}
+         <script src="{{ asset('assets/js/webfont.js')}}"></script>
+    <script>
+        WebFont.load({
+            google: {"families":["Poppins:300,400,500,600,700"]},
+            active: function() {
+                sessionStorage.fonts = true;
+            }
+        });
+    </script>
 
 </head>
 <body>
@@ -83,5 +77,6 @@
             @yield('content')
         </main>
     </div>
+<script src="{{ asset('asset/js/bootstrap.bundle.min.js') }}"></script>
 </body>
 </html>

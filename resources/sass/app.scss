@@ -1,0 +1,33 @@
+body{
+    background: linear-gradient(90deg, #97C8F9, #9FE7EE);
+    font-family: "Poppins";
+}
+.clr-white
+{
+    color: white;
+}
+.login-wrapper{
+    max-width:80%;
+    max-height: fit-content;
+    background-color: white;
+}
+.login-input{
+    border: 0px solid #ced4da;
+    border-bottom: 1px solid #00000052;
+    border-radius:0px;
+}
+.login-form{
+    padding: 30px;
+}
+.login-form img{
+   width: 57%;
+    padding: 8px;
+}
+.img-container {
+    padding: 25px 0px;
+    width: 30%;
+    box-sizing: border-box;
+    box-shadow: 1px 1px 7px -3px;
+    border-radius: 54%;
+    margin-bottom: 10px !important;
+}
