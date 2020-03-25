@@ -1,23 +1,30 @@
 <!doctype html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8"/>
+        <meta name="csrf-token" content="{{ csrf_token() }}" />
+        <title>SMS | @yield('title')</title>
+        <link rel="shortcut icon" href="{{ asset('assets/media/fav.ico') }}">
+        <meta name="description" content="Latest updates and statistic charts">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        {{-- {{-- <script src="{{ asset('assets/webfont/1.6.16/webfont.js')}}"></script>
+        <script>
+            WebFont.load({
+                google: {"families":["Poppins:300,400,500,600,700"]},
+                active: function() {
+                    sessionStorage.fonts = true;
+                }
+            });
+        </script>
+        @yield('css') --}}
+        <link href="{{ asset('css/app.css') }}" rel="stylesheet" type="text/css" />
+        {{-- <link href="{{ asset('assets/css/style.bundle.css') }}" rel="stylesheet" type="text/css" />
+        <link href="{{ asset('assets/css/overrides.css') }}" rel="stylesheet" type="text/css" />
+        <link href="{{ asset('assets/css/styleH.css') }}" rel="stylesheet" type="text/css" />
+        <link href="{{ asset('assets/css/header-override.css') }}" rel="stylesheet" type="text/css" />
+        <link href="{{ asset('assets/css/animate.css') }}" rel="stylesheet" type="text/css" />
+        <link href="{{ asset('assets/css/responsiveH.css') }}" rel="stylesheet" type="text/css" /> --}} --}}
 
-    <!-- CSRF Token -->
-    <meta name="csrf-token" content="{{ csrf_token() }}">
-
-    <title>{{ config('app.name', 'Laravel') }}</title>
-
-    <!-- Scripts -->
-    <script src="{{ asset('js/app.js') }}" defer></script>
-
-    <!-- Fonts -->
-    <link rel="dns-prefetch" href="//fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
-
-    <!-- Styles -->
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 </head>
 <body>
     <div id="app">
