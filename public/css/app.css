@@ -8,7 +8,7 @@ body {
 }
 
 .login-wrapper {
-  max-width: 80%;
+  min-width: 340px;
   margin: auto;
   max-height: -webkit-fit-content;
   max-height: -moz-fit-content;
@@ -44,6 +44,18 @@ body {
   text-align: right;
 }
 
+.eye .btn {
+  position: absolute;
+  padding: 0;
+  margin: 0;
+  right: 20px;
+}
+
+.eye .btn:focus,
+.eye .btn:active {
+  outline: none !important;
+}
+
 @media (max-width: 576px) {
   .login-wrapper {
     max-width: 100% !important;
@@ -57,6 +69,12 @@ body {
 @media (min-width: 576px) {
   .login-wrapper {
     max-width: 100% !important;
+  }
+}
+
+@media (min-width: 1200px) {
+  .login-wrapper {
+    max-width: 80% !important;
   }
 }
 

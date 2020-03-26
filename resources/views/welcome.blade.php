@@ -68,21 +68,26 @@
                                         </div>
 
                                         <div class="form-group row">
-                                            <label for="password" class="col-2 px-0 text-md-right"><i class="la la-2x la-key"></i></label>
-                                            <div class="col-10">
-                                                <input id="password" type="password" class="form-control @error('password') is-invalid @enderror  login-input" name="password" required autocomplete="current-password" placeholder="Password">
-                                                {{-- <span><i class="la la-eye-slash"></i></span> --}}
-                                                @error('password')
-                                                    <span class="invalid-feedback" role="alert">
-                                                        <strong>{{ $message }}</strong>
-                                                    </span>
-                                                @enderror
-                                                @if (Route::has('password.request'))
-                                                <a href="{{ route('password.request') }}" class="text-md-right">
-                                                    {{ __('Forgot Your Password?') }}
-                                                </a>
-                                            @endif
+                                            <label for="password" class="col-2 px-0 mx-0 text-md-right"><i class="la la-2x la-key"></i></label>
+                                            <div class="col-10 d-flex">
+                                                <div class="w-100">
+                                                        <input id="password" type="password" class="form-control @error('password') is-invalid @enderror  login-input" name="password" required autocomplete="current-password" placeholder="Password">
+                                                </div>
+                                                <div class="eye">
+                                                        <button class="btn" id="hide_show" data-ac="0"><i class="la la-2x la-eye-slash"></i></button>
+                                                </div>
+                                                        @error('password')
+                                                            <span class="invalid-feedback" role="alert">
+                                                                <strong>{{ $message }}</strong>
+                                                            </span>
+                                                        @enderror
+
                                             </div>
+                                            @if (Route::has('password.request'))
+                                            <a href="{{ route('password.request') }}" class="text-md-right offset-2">
+                                                {{ __('Forgot Your Password?') }}
+                                            </a>
+                                        @endif
                                         </div>
                                         <div class="form-group row mb-0">
                                             <div class="col-md-10 offset-2">
@@ -133,5 +138,24 @@
             </footer>
             </div>
         </div>
+    <script src="{{ asset('js/app.js') }}"></script>
+    <script src="{{ asset('asset/js/jquery.js') }}"></script>
+    <script src="{{ asset('asset/js/vendor.bundle.js') }}"></script>
+    <script>
+        $("#hide_show").on('click', function(e){
+            e.preventDefault();
+            var data = $(this).data('ac');
+            if(data==0){
+                $("#password").attr("type","text");
+                $(this).data('ac',1);
+            }else{
+                $("#password").attr("type","password");
+                $(this).data('ac',0);
+
+            }
+
+
+        })
+    </script>
     </body>
 </html>

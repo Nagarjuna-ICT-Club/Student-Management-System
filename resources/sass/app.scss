@@ -7,7 +7,7 @@ body{
     color: white;
 }
 .login-wrapper{
-    max-width:80%;
+    min-width: 340px;
     margin: auto;
     max-height: fit-content;
     background-color: white;
@@ -34,6 +34,16 @@ body{
 }
 .other_link{
     text-align: right;
+}
+
+.eye .btn{
+    position: absolute;
+    padding: 0;
+    margin: 0;
+    right: 20px;
+}
+.eye .btn:focus, .eye .btn:active{
+    outline: none !important;
 }
 @media (max-width: 576px) {
     .login-wrapper{
@@ -62,5 +72,7 @@ body{
 
 // Extra large devices (large desktops, 1200px and up)
 @media (min-width: 1200px) {
-
+    .login-wrapper{
+        max-width: 80% !important;
+    }
  }
