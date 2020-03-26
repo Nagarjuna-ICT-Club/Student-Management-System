@@ -69,7 +69,7 @@
 
                                         <div class="form-group row">
                                             <label for="password" class="col-2 px-0 text-md-right"><i class="la la-2x la-key"></i></label>
-                                            <div class="col-md-10">
+                                            <div class="col-10">
                                                 <input id="password" type="password" class="form-control @error('password') is-invalid @enderror  login-input" name="password" required autocomplete="current-password" placeholder="Password">
                                                 {{-- <span><i class="la la-eye-slash"></i></span> --}}
                                                 @error('password')
@@ -114,17 +114,23 @@
                     </div>
                 </div>
             </div>
-
-                {{-- <div class="links">
-                    <a href="https://laravel.com/docs">Docs</a>
-                    <a href="https://laracasts.com">Laracasts</a>
-                    <a href="https://laravel-news.com">News</a>
-                    <a href="https://blog.laravel.com">Blog</a>
-                    <a href="https://nova.laravel.com">Nova</a>
-                    <a href="https://forge.laravel.com">Forge</a>
-                    <a href="https://vapor.laravel.com">Vapor</a>
-                    <a href="https://github.com/laravel/laravel">GitHub</a>
-                </div> --}}
+            <footer class="mt-5 text-white">
+            <div class="container">
+                <div class="row">
+                <div class="col-md-6 col-sm-6">
+                    <div class="text-left">
+              <p class="text-white"><i class="la la-copyright"></i>  All Right Reserved</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-sm-6">
+                    <div class="text-right">
+                        <a href="#" class="text-white px-1" >About</a>
+                        <a href="#" class="text-white px-1">Contact</a>
+                    </div>
+                </div>
+            </div>
+            </div>
+            </footer>
             </div>
         </div>
     </body>

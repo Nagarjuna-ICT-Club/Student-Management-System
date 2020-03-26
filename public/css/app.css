@@ -39,3 +39,9 @@ body {
   margin-bottom: 10px !important;
 }
 
+@media (min-width: 576px) {
+  .login-wrapper {
+    max-width: 100% !important;
+  }
+}
+
