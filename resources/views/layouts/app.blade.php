@@ -1,15 +1,16 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-<head>
-    <meta charset="utf-8"/>
-        <meta name="csrf-token" content="{{ csrf_token() }}" />
-        <title>SMS | @yield('title')</title>
-        <link rel="shortcut icon" href="{{ asset('assets/media/fav.ico') }}">
-        <meta name="description" content="Latest updates and statistic charts">
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-        <link href="{{ asset('css/asset/bootstrap.min.css') }}" rel="stylesheet" type="text/css" />
-        <link href="{{ asset('css/app.css') }}" rel="stylesheet" type="text/css" />
-         <script src="{{ asset('assets/js/webfont.js')}}"></script>
+    <head>
+        <meta charset="utf-8"/>
+            <meta name="csrf-token" content="{{ csrf_token() }}" />
+            <title>SMS | @yield('title')</title>
+            <link rel="shortcut icon" href="{{ asset('assets/media/fav.ico') }}">
+            <meta name="description" content="Latest updates and statistic charts">
+            <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+            <link href="{{ asset('asset/css/bootstrap.min.css') }}" rel="stylesheet" type="text/css" />
+            <link href="{{ asset('asset/css/vendor.min.css')}}" rel="stylesheet" type="text/css" />
+            <link href="{{ asset('css/app.css') }}" rel="stylesheet" type="text/css" />
+            <script src="{{ asset('asset/js/webfont.js')}}"></script>
     <script>
         WebFont.load({
             google: {"families":["Poppins:300,400,500,600,700"]},
@@ -19,10 +20,10 @@
         });
     </script>
 
-</head>
+    </head>
 <body>
     <div id="app">
-        <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
+        <nav class="navbar navbar-expand-md">
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/') }}">
                     {{ config('app.name', 'Laravel') }}

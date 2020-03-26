@@ -8,6 +8,7 @@ body{
 }
 .login-wrapper{
     max-width:80%;
+    margin: auto;
     max-height: fit-content;
     background-color: white;
 }
@@ -31,6 +32,17 @@ body{
     border-radius: 54%;
     margin-bottom: 10px !important;
 }
+.other_link{
+    text-align: right;
+}
+@media (max-width: 576px) {
+    .login-wrapper{
+        max-width: 100% !important;
+    }
+    .other_link{
+        text-align: left;
+    }
+ }
 // Small devices (landscape phones, 576px and up)
 @media (min-width: 576px) {
     .login-wrapper{

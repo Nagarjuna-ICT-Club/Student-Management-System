@@ -45,9 +45,9 @@
 
             <div class="container">
                 <div class="row">
-                    <div class="col-md-8 m-auto">
+                    <div class="col-md-8 col-sm-12 m-auto">
                         <div class="login-box mt-5 mb-5">
-                            <div class="col-md-8 m-auto">
+                            <div class="col-md-8 col-sm-12 m-auto">
                                 <div class="login-wrapper">
                                     <div class="login-form">
                                         <div class="col-6 m-auto text-center img-container">
@@ -123,7 +123,7 @@
                     </div>
                 </div>
                 <div class="col-md-6 col-sm-6">
-                    <div class="text-right">
+                    <div class="other_link">
                         <a href="#" class="text-white px-1" >About</a>
                         <a href="#" class="text-white px-1">Contact</a>
                     </div>
