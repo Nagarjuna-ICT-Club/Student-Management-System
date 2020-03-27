@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "f0dcbdc80776ca79d6311b8f92c5a4b5",
+    "content-hash": "eb36a5ab97c24540b0f066eac075b308",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -1962,6 +1962,39 @@
                 "uuid"
             ],
             "time": "2020-02-21T04:36:14+00:00"
+        },
+        {
+            "name": "sudeep/formparse",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/sudeepmeesra/FormParse.git",
+                "reference": "02e7f22b5f17e98cea3633e7f3cf17d55dba3b4d"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/sudeepmeesra/FormParse/zipball/02e7f22b5f17e98cea3633e7f3cf17d55dba3b4d",
+                "reference": "02e7f22b5f17e98cea3633e7f3cf17d55dba3b4d",
+                "shasum": ""
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Sudeep\\FormParser\\": "FormParse"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Sudeep Mishra",
+                    "email": "sudeep0599@gmail.com"
+                }
+            ],
+            "description": "An easy form parser and management tool for Laravel",
+            "time": "2019-09-25T05:20:42+00:00"
         },
         {
             "name": "swiftmailer/swiftmailer",
@@ -5497,7 +5530,9 @@
     ],
     "aliases": [],
     "minimum-stability": "dev",
-    "stability-flags": [],
+    "stability-flags": {
+        "sudeep/formparse": 20
+    },
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {

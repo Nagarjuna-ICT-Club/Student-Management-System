@@ -10,6 +10,7 @@
             <link href="{{ asset('asset/css/bootstrap.min.css') }}" rel="stylesheet" type="text/css" />
             <link href="{{ asset('asset/css/vendor.min.css')}}" rel="stylesheet" type="text/css" />
             <link href="{{ asset('css/app.css') }}" rel="stylesheet" type="text/css" />
+            <link href="{{ asset('css/toastr.css') }}" rel="stylesheet" type="text/css" />
             <script src="{{ asset('asset/js/webfont.js')}}"></script>
     <script>
         WebFont.load({
@@ -74,6 +75,9 @@
 <script src="{{ asset('js/app.js') }}"></script>
 <script src="{{ asset('asset/js/jquery.js') }}"></script>
 <script src="{{ asset('asset/js/vendor.bundle.js') }}"></script>
+<script src="{{ asset('asset/js/form.js') }}"></script>
+<script src="{{ asset('asset/js/toastr.js') }}"></script>
+
 @yield('js')
 </body>
 </html>

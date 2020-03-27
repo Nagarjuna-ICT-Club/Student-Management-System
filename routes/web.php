@@ -21,3 +21,4 @@ Auth::routes(['register' => false]);
 
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/profile', 'HomeController@profile')->name('profile');
+Route::post('/edit_profile/{id}','HomeController@EditProfile')->name('edit_profile');

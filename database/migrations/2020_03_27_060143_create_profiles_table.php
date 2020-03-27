@@ -18,10 +18,10 @@ class CreateProfilesTable extends Migration
             $table->string('student_id');
             $table->string('faculty');
             $table->string('sem')->eval(1,2,3,4,5,6,7,8);
-            $table->string('bio');
-            $table->string('fb');
-            $table->string('gh');
-            $table->string('li');
+            $table->string('bio')->nullable();
+            $table->string('fb')->nullable();
+            $table->string('gh')->nullable();
+            $table->string('li')->nullable();
             $table->string('phone');
             $table->timestamps();
         });

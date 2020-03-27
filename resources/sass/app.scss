@@ -50,6 +50,15 @@ body{
     outline: 0 !important;
     box-shadow: none;
 }
+.label{
+    background: #32cd32;
+    color: white;
+    padding: 5px;
+}
+.g-btn{
+    background-color: #32cd32 !important;
+    border: #32cd32 !important;
+}
 
 @media (max-width: 576px) {
     .login-wrapper{
