@@ -38,17 +38,29 @@
                             <input type="Username" class="form-control form-input"  id="username" value="{{ $user->profile->username ?? "" }}" placeholder="Username">
                         </div>
                         <div class="form-group">
-                            <select name="" id="fac_opt">
+                            <select name="" id="fac_opt" class="form-control form-input">
                                 <div id="fac_opt"></div>
                             </select>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" name="" id="" class="form-control form-input" placeholder="+9779808989898">
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <select name="" id="fac_opt" class="form-control form-input">
+                                @for ($i = 1; $i <= 8; $i++)
+                                    <option value="{{ $i }}" @if($user->semester==$i) selected @endif>Semester {{$i}} </option>
+                                @endfor
+                             </select>
                         </div>
                     </div>
                 </div>
             </form>
         </div>
         <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-            <button type="button" class="btn btn-primary">Send message</button>
+            <button type="button" class="btn btn-secondary btn-sm" data-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary btn-sm">Save</button>
           </div>
       </div>
 
@@ -74,6 +86,7 @@
                 $("#fac_opt").append("<option value='"+element+"'>"+element+"</option>");
             }
         })
+
 
     </script>
 @endsection

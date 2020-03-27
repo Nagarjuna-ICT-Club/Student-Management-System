@@ -10,6 +10,7 @@
             <link href="{{ asset('asset/css/bootstrap.min.css') }}" rel="stylesheet" type="text/css" />
             <link href="{{ asset('asset/css/vendor.min.css')}}" rel="stylesheet" type="text/css" />
             <link href="{{ asset('css/app.css') }}" rel="stylesheet" type="text/css" />
+            <link href="{{ asset('css/toastr.css') }}" rel="stylesheet" type="text/css" />
             <script src="{{ asset('asset/js/webfont.js')}}"></script>
     <script>
         WebFont.load({
@@ -148,6 +149,7 @@
     <script src="{{ asset('js/app.js') }}"></script>
     <script src="{{ asset('asset/js/form.js') }}"></script>
     <script src="{{ asset('asset/js/jquery.js') }}"></script>
+    <script src="{{ asset('asset/js/toastr.js') }}"></script>
     <script src="{{ asset('asset/js/vendor.bundle.js') }}"></script>
     <script>
         $.ajaxSetup({
@@ -184,10 +186,25 @@
                     $("#sms_lg_sub").html("Signing in ....")
                }
            }).fail(function(response){
-               getErrors(response);
-               $("#sms_lg_sub").html("Login")
+            toastr.options = {
+                "newestOnTop": true,
+                "progressBar": true,
+            }
+            toastr["error"]("Failed to login");
+            getErrors(response);
+            $("#sms_lg_sub").html("Login")
            }).done(function(){
-               window.location = "{{ route('home') }}"
+            toastr.options = {
+                "newestOnTop": true,
+                "progressBar": true,
+                "showDuration": "200",
+                "hideDuration": "1000",
+                "timeOut": "4000",
+                            }
+            toastr["success"]("Redirecting to home","Login Success");
+            setTimeout(function(){
+                window.location = "{{ route('home') }}"
+            },4000);
            })
 
 
