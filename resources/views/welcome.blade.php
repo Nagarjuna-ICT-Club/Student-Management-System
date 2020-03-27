@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8"/>
             <meta name="csrf-token" content="{{ csrf_token() }}" />
-            <title>SMS | @yield('title')</title>
+            <title>SMS | Login</title>
             <link rel="shortcut icon" href="{{ asset('assets/media/fav.ico') }}">
             <meta name="description" content="Latest updates and statistic charts">
             <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -53,17 +53,21 @@
                                         <div class="col-6 m-auto text-center img-container">
                                             <img src="{{ asset('asset/img/logo.png') }}" alt="logo">
                                         </div>
-                                    <form method="POST" action="{{ route('login') }}">
+                                    <form method="POST" id="sms_login">
                                         @csrf
                                         <div class="form-group row">
                                             <label for="email" class="col-2 px-0 text-md-right"><i class="la la-2x la-user"></i></label>
                                             <div class="col-10">
                                                 <input id="email" type="email" class="form-control @error('email') is-invalid @enderror login-input" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus placeholder="Username">
-                                                @error('email')
+                                                {{-- error handling with laravel --}}
+                                                {{-- @error('email')
                                                     <span class="invalid-feedback" role="alert">
                                                         <strong>{{ $message }}</strong>
                                                     </span>
-                                                @enderror
+                                                @enderror --}}
+                                                <span class="invalid-feedback" role="alert">
+                                                    <strong class="error-email"></strong>
+                                                </span>
                                             </div>
                                         </div>
 
@@ -74,13 +78,16 @@
                                                         <input id="password" type="password" class="form-control @error('password') is-invalid @enderror  login-input" name="password" required autocomplete="current-password" placeholder="Password">
                                                 </div>
                                                 <div class="eye">
-                                                        <button class="btn" id="hide_show" data-ac="0"><i class="la la-2x la-eye-slash"></i></button>
+                                                        <button class="btn sh" id="hide_show" data-ac="0"><i class="la la-2x la-eye"></i></button>
                                                 </div>
-                                                        @error('password')
+                                                        {{-- @error('password')
                                                             <span class="invalid-feedback" role="alert">
                                                                 <strong>{{ $message }}</strong>
                                                             </span>
-                                                        @enderror
+                                                        @enderror --}}
+                                                        <span class="invalid-feedback" role="alert">
+                                                            <strong class="error-password"></strong>
+                                                        </span>
 
                                             </div>
                                             @if (Route::has('password.request'))
@@ -91,7 +98,7 @@
                                         </div>
                                         <div class="form-group row mb-0">
                                             <div class="col-md-10 offset-2">
-                                                <button type="submit" class="btn btn-primary btn-block">
+                                                <button type="submit" class="btn btn-primary btn-block" id="sms_lg_sub">
                                                     {{ __('Login') }}
                                                 </button>
                                             </div>
@@ -139,20 +146,50 @@
             </div>
         </div>
     <script src="{{ asset('js/app.js') }}"></script>
+    <script src="{{ asset('asset/js/form.js') }}"></script>
     <script src="{{ asset('asset/js/jquery.js') }}"></script>
     <script src="{{ asset('asset/js/vendor.bundle.js') }}"></script>
     <script>
+        $.ajaxSetup({
+                    headers: {
+                        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                    }
+                });
         $("#hide_show").on('click', function(e){
             e.preventDefault();
             var data = $(this).data('ac');
             if(data==0){
                 $("#password").attr("type","text");
+                $(this).html("<i class='la la-2x la-eye-slash'></i>")
                 $(this).data('ac',1);
             }else{
                 $("#password").attr("type","password");
+                $(this).html("<i class='la la-2x la-eye'></i>")
                 $(this).data('ac',0);
 
             }
+        })
+
+        $("#sms_login").on('submit', function(e){
+            e.preventDefault()
+            var data = {
+                email : $("#email").val(),
+                password : $("#password").val()
+            }
+           $.ajax({
+               method:"POST",
+               url:"{{ route('login') }}",
+               data: data,
+               beforeSend: function(){
+                    $("#sms_lg_sub").html("Signing in ....")
+               }
+           }).fail(function(response){
+               getErrors(response);
+               $("#sms_lg_sub").html("Login")
+           }).done(function(){
+               window.location = "{{ route('home') }}"
+           })
+
 
 
         })

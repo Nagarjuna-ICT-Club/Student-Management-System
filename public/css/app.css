@@ -16,7 +16,8 @@ body {
   background-color: white;
 }
 
-.login-input {
+.login-input,
+.form-input {
   border: 0px solid #ced4da;
   border-bottom: 1px solid #00000052;
   border-radius: 0px;
@@ -33,7 +34,6 @@ body {
 
 .img-container {
   padding: 25px 0px;
-  width: 30%;
   box-sizing: border-box;
   box-shadow: 1px 1px 7px -3px;
   border-radius: 54%;
@@ -44,16 +44,22 @@ body {
   text-align: right;
 }
 
-.eye .btn {
+.sh {
   position: absolute;
   padding: 0;
   margin: 0;
   right: 20px;
 }
 
-.eye .btn:focus,
-.eye .btn:active {
-  outline: none !important;
+.sh:focus {
+  outline: 0 !important;
+  box-shadow: none;
+}
+
+.login-input:focus,
+.form-input:focus {
+  outline: 0 !important;
+  box-shadow: none;
 }
 
 @media (max-width: 576px) {
@@ -64,17 +70,35 @@ body {
   .other_link {
     text-align: left;
   }
+
+  .img-container {
+    width: 40%;
+  }
 }
 
 @media (min-width: 576px) {
   .login-wrapper {
     max-width: 100% !important;
   }
+
+  .img-container {
+    width: 30%;
+  }
+}
+
+@media (min-width: 768px) {
+  .img-container {
+    width: 50%;
+  }
 }
 
 @media (min-width: 1200px) {
   .login-wrapper {
     max-width: 80% !important;
+  }
+
+  .img-container {
+    width: 50%;
   }
 }
 
