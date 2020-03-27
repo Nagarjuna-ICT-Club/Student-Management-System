@@ -59,6 +59,43 @@ body{
     background-color: #32cd32 !important;
     border: #32cd32 !important;
 }
+.navbar-toggler-icon {
+    vertical-align: middle;
+    background: no-repeat center center;
+    background-size: 100% 100%;
+    display: inline;
+}
+.navbar-toggler {
+    padding: 1px 10px;
+    font-size: 1.25rem;
+    line-height: 1;
+    /* background-color: limegreen; */
+    border: 1px solid transparent;
+    border-radius: 0.25rem;
+    outline: 1px solid #32cd32;
+}
+.navbar-toggler:focus{
+    outline: none;
+}
+.navbar-toggler i{
+    font-size: 20px;
+}
+.profile_body .pre_loader{
+    position: fixed;
+    z-index: 9;
+    text-align: center;
+    width: 100%;
+    height: 450px;
+    background: #f1f2f3;
+    z-index: 174;
+    /* flex: 1 1 auto; */
+    padding: 52px;
+    left: 228px;
+}
+.profile_body{
+    min-height: 475px;
+    background: #f1f2f3;
+}
 
 @media (max-width: 576px) {
     .login-wrapper{

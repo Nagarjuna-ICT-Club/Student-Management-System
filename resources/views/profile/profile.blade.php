@@ -5,20 +5,27 @@
     <div class="row justify-content-center">
         <div class="col-md-10">
             <div class="card">
-                <div class="card-header row">
+                <div class="card-header d-flex">
                  <div class="col-8">Profile</div>
-                 <div class="col-4 text-right">Edit</div>
+                 <div class="col-4 text-right">
+                    <button id="edit_profile" class="btn"><i class="fas fa-user-edit"></i></button>
+                   </div>
                 </div>
-                <div class="card-body">
-                    @if($user->profile==null)
-                       <p> Your profile is not ready yet</p>
-                        <a class="btn btn-outline-secondary" href="#" id="edit_profile">Click Here to Setup your profile</a>
-                    @else
-                    <div class="col-md-6">
-                        {{ $user->profile ?? 'Dispaly Name'}}
-                        <a class="btn btn-outline-secondary" href="#" id="edit_profile">Edit your profile</a>
+                <div class="card-body profile_body">
+                    <div class="pre_loader col-md-8 m-auto">
+                        <img src="{{ asset('asset/img/gloader.gif') }}" alt="">
                     </div>
-                    @endif
+                    <div class="row">
+                        @if($user->profile==null)
+                        <p> Your profile is not ready yet</p>
+                            <a class="btn btn-outline-secondary" href="#" id="edit_profile">Click Here to Setup your profile</a>
+                        @else
+                        <div class="col-md-6 profile_info">
+                            {{ $user->profile ?? 'Dispaly Name'}}
+                            <a class="btn btn-outline-secondary" href="#" id="edit_profile">Edit your profile</a>
+                        </div>
+                        @endif
+                    </div>
                 </div>
             </div>
         </div>
@@ -76,7 +83,7 @@
         </div>
         <div class="modal-footer">
             <button type="button" class="btn btn-secondary btn-sm " data-dismiss="modal">Close</button>
-            <button type="submit" class="btn btn-primary btn-sm g-btn">Save</button>
+            <button type="submit" class="btn btn-primary btn-sm g-btn" id="edit_sub">Save</button>
           </div>
       </div>
     </form>
@@ -97,9 +104,15 @@
             }).done(function(res){
                localStorage.setItem('faculties',res);
             })
-
+        $(document).ready(function(){
+            setTimeout(function(){
+                $('.pre_loader').hide()
+            },3000)
+        })
         $('#edit_profile').click(function(){
-            $("#edit_modal").modal();
+            $("#edit_modal").modal({
+                focus: true
+            });
             var fac = localStorage.getItem('faculties');
             fac = JSON.parse(fac);
             for (let index = 0; index < fac[0].length; index++) {
@@ -124,6 +137,12 @@
                 "progressBar": true,
                 }
                 toastr["success"]("Profile updated!!");
+                $("#edit_modal").modal('hide');
+                $('.pre_loader').show()
+                setTimeout(function(){
+                    $('.pre_loader').hide()
+                },3000)
+                $('.profile_info').text(res);
 
             }).fail(function(res){
                 toastr.options = {
