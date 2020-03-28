@@ -51,10 +51,10 @@
                             </select>
                         </div>
                         <div class="form-group">
-                        <input type="text" name="phone" id="" class="form-control form-input" placeholder="+9779808989898" value="{{ $user->profile->phone }}">
+                        <input type="text" name="phone" id="" class="form-control form-input" placeholder="+9779808989898" value="{{ $user->profile->phone ?? "" }}">
                         </div>
                         <div class="form-group">
-                            <textarea name="bio" id="" cols="30" rows="5" name="bio" class="form-input" placeholder="Your bio here !!!">{{ $user->profile->bio }}</textarea>
+                            <textarea name="bio" id="" cols="30" rows="5" name="bio" class="form-input" placeholder="Your bio here !!!">{{ $user->profile->bio ?? ""}}</textarea>
                         </div>
                     </div>
                     <div class="col-md-6">
@@ -69,13 +69,13 @@
                             <span>Social</span>
                         </div>
                         <div class="form-group">
-                        <input class="form-control form-input" type="url" value="{{ $user->profile->fb }}" name="fb" id="" placeholder="facebook profile">
+                        <input class="form-control form-input" type="url" value="{{ $user->profile->fb ?? "" }}" name="fb" id="" placeholder="facebook profile">
                         </div>
                         <div class="form-group">
-                            <input class="form-control form-input" type="url" value="{{ $user->profile->gh }}" name="gh" id="" placeholder="github profile">
+                            <input class="form-control form-input" type="url" value="{{ $user->profile->gh ?? "" }}" name="gh" id="" placeholder="github profile">
                         </div>
                         <div class="form-group">
-                            <input class="form-control form-input" type="url" value="{{ $user->profile->li }}" name="li" id="" placeholder="linkedin profile">
+                            <input class="form-control form-input" type="url" value="{{ $user->profile->li ?? "" }}" name="li" id="" placeholder="linkedin profile">
                         </div>
                     </div>
                 </div>
