@@ -4,7 +4,7 @@
         <meta charset="utf-8"/>
             <meta name="csrf-token" content="{{ csrf_token() }}" />
             <title>SMS | @yield('title')</title>
-            <link rel="shortcut icon" href="{{ asset('assets/media/fav.ico') }}">
+            <link rel="shortcut icon" href="{{ asset('asset/img/logo.png') }}">
             <meta name="description" content="Latest updates and statistic charts">
             <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
             <link href="{{ asset('asset/css/bootstrap.min.css') }}" rel="stylesheet" type="text/css" />
@@ -12,72 +12,134 @@
             <link href="{{ asset('css/app.css') }}" rel="stylesheet" type="text/css" />
             <link href="{{ asset('css/toastr.css') }}" rel="stylesheet" type="text/css" />
             <script src="{{ asset('asset/js/webfont.js')}}"></script>
-    <script>
-        WebFont.load({
-            google: {"families":["Poppins:300,400,500,600,700"]},
-            active: function() {
-                sessionStorage.fonts = true;
-            }
-        });
-    </script>
+             <!-- Scrollbar Custom CSS -->
+            <link rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.min.css">
+            <!-- tailwind css -->
+            <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
+            <!-- main css -->
+            <link rel="stylesheet" href="{{ asset("asset/css/style.css") }}">
+                <script>
+                    WebFont.load({
+                        google: {"families":["Poppins:300,400,500,600,700"]},
+                        active: function() {
+                            sessionStorage.fonts = true;
+                        }
+                    });
+                </script>
 
     </head>
 <body>
     <div id="app">
-        <nav class="navbar navbar-expand-md">
+          <!-- header starts -->
+    <header>
+        <div class="topBar">
             <div class="container">
-                <a class="navbar-brand" href="{{ url('/') }}">
-                    {{ config('app.name', 'Laravel') }}
-                </a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
-                    <i class="la la-bars "></i>
-                </button>
+                <div class="row">
+                    <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6">
+                        <a class="brand">Nagarjuna College of IT</a>
+                    </div>
+                        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 text-right">
+                        <a class="" href="#" role="button" data-toggle="dropdown">
+                            {{ Auth::user()->name }} <i class="fas fa-chevron-down"></i>
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-right">
+                            <a class="dropdown-item" href="{{ route('logout') }}"
+                               onclick="event.preventDefault();
+                                             document.getElementById('logout-form').submit();">
+                                {{ __('Logout') }}
+                            </a>
+                            <a class="dropdown-item" href="{{ route('profile') }}">
+                                Profile
+                         </a>
 
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <!-- Left Side Of Navbar -->
-                    <ul class="navbar-nav mr-auto">
-
-                    </ul>
-
-                    <!-- Right Side Of Navbar -->
-                    <ul class="navbar-nav ml-auto">
-                        <!-- Authentication Links -->
-
-                            <li class="nav-item dropdown">
-                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                    {{ Auth::user()->name }} <span class="caret"></span>
-                                </a>
-
-                                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item" href="{{ route('logout') }}"
-                                       onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
-                                        {{ __('Logout') }}
-                                    </a>
-                                    <a class="dropdown-item" href="{{ route('profile') }}">
-                                        Profile
-                                 </a>
-
-                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                                        @csrf
-                                    </form>
-                                </div>
-                            </li>
-                    </ul>
+                            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                @csrf
+                            </form>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </nav>
+        </div>
+    </header>
+    <!-- header ends -->
 
-        <main class="py-4">
+    <!-- main starts -->
+    <main>
+        <div class="wrapper">
+            <!-- Sidebar  -->
+            <!-- here the class active is used to hide the sidebar -->
+            <nav id="sidebar" class="active">
+                <ul>
+                    <li>
+                        <i class="fas fa-home"></i> Home
+                    </li>
+                    <li>
+                        <i class="fas fa-newspaper"></i> Attendance
+                    </li>
+                    <li>
+                        <i class="fas fa-dollar-sign"></i> Fees Details
+                    </li>
+                    <li>
+                        <i class="fas fa-list-ul"></i> Assignments
+                    </li>
+                    <li>
+                        <i class="far fa-question-circle"></i> Examination
+                    </li>
+                    <li>
+                        <i class="fas fa-scroll"></i> Results
+                    </li>
+                    <li>
+                        <i class="far fa-envelope"></i> Messages
+                    </li>
+                    <li>
+                        <i class="fas fa-gift"></i> Opportunities
+                    </li>
+                    <li>
+                        <i class="fas fa-code"></i> Practicals
+                    </li>
+                    <li>
+                        <i class="far fa-check-circle"></i> Approved Application
+                    </li>
+                    <li>
+                        <i class="far fa-user"></i> Faculty
+                    </li>
+                </ul>
+            </nav>
+            <div id="content">
+                <button type="button" id="sidebarCollapse" class="btn btn-info">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+            </div>
+
+
             @yield('content')
         </main>
     </div>
+
+    <!-- footer starts -->
+    <footer>
+        footer
+    </footer>
+    <!-- footer ends -->
 <script src="{{ asset('js/app.js') }}"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
 <script src="{{ asset('asset/js/jquery.js') }}"></script>
 <script src="{{ asset('asset/js/vendor.bundle.js') }}"></script>
 <script src="{{ asset('asset/js/form.js') }}"></script>
 <script src="{{ asset('asset/js/toastr.js') }}"></script>
-
+<!-- Popper.JS -->
+<!-- chart js -->
+<script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+ <!-- custom js -->
+<script src={{ asset("asset/js/script.js") }}></script>
+<script>
+     $.ajaxSetup({
+                    headers: {
+                        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                    }
+                });
+</script>
 @yield('js')
 </body>
 </html>

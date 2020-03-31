@@ -23,27 +23,12 @@
 
     </head>
 
-    <body>
+    <body id="login_body">
         <nav class="navbar navbar-expand-lg navbar-light clr-white">
             <div class="container">
                 <p><i class="la la-arrow-left"></i> Back to page</p>
             </div>
           </nav>
-        {{-- <div class="flex-center position-ref full-height">
-            @if (Route::has('login'))
-                <div class="top-right links">
-                    @auth
-                        <a href="{{ url('/home') }}">Home</a>
-                    @else
-                        <a href="{{ route('login') }}">Login</a>
-
-                        @if (Route::has('register'))
-                            <a href="{{ route('register') }}">Register</a>
-                        @endif
-                    @endauth
-                </div>
-            @endif--}}
-
             <div class="container">
                 <div class="row">
                     <div class="col-md-8 col-sm-12 m-auto">
@@ -60,12 +45,6 @@
                                             <label for="email" class="col-2 px-0 text-md-right"><i class="la la-2x la-user"></i></label>
                                             <div class="col-10">
                                                 <input id="email" type="email" class="form-control @error('email') is-invalid @enderror login-input" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus placeholder="Username">
-                                                {{-- error handling with laravel --}}
-                                                {{-- @error('email')
-                                                    <span class="invalid-feedback" role="alert">
-                                                        <strong>{{ $message }}</strong>
-                                                    </span>
-                                                @enderror --}}
                                                 <span class="invalid-feedback" role="alert">
                                                     <strong class="error-email"></strong>
                                                 </span>
@@ -92,15 +71,20 @@
 
                                             </div>
                                             @if (Route::has('password.request'))
-                                            <a href="{{ route('password.request') }}" class="text-md-right offset-2">
+                                            <a href="{{ route('password.request') }}" class="text-md-right offset-3">
                                                 {{ __('Forgot Your Password?') }}
                                             </a>
                                         @endif
                                         </div>
                                         <div class="form-group row mb-0">
                                             <div class="col-md-10 offset-2">
-                                                <button type="submit" class="btn btn-primary btn-block" id="sms_lg_sub">
+                                                <button type="submit" class="btn btn-primary btn-block mb-2" id="sms_lg_sub">
                                                     {{ __('Login') }}
+                                                </button>
+                                            </div>
+                                            <div class="col-md-10 offset-2">
+                                                <button type="button" class="btn g-btn btn-block" id="activate_profile">
+                                                    Activate Your Account
                                                 </button>
                                             </div>
                                         </div>
@@ -146,6 +130,29 @@
             </footer>
             </div>
         </div>
+        <div class="modal fade bd-example-modal-lg" id="activate_profile" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog modal-lg">
+              <div class="modal-content g-modal">
+                <div class="modal-header">Activate Your Account</div>
+                    <form method="post" id="profile_ac_form">
+                        <div class="modal-body">
+                            <div class="row">
+                                <div class="col-md-6 m-auto">
+                                    <div class="form-group">
+                                        <input type="email" class="form-control form-input" name="email"  id="email" value=" ">
+                                    </div>
+                                    <div class="form-group">
+                                        <button type="button" class="btn btn-secondary btn-sm " data-dismiss="modal">Close</button>
+                                        <button type="submit" class="btn btn-primary btn-sm g-btn" id="edit_sub">Activate</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </form>
+             </div>
+          </div>
+        </div>
     <script src="{{ asset('js/app.js') }}"></script>
     <script src="{{ asset('asset/js/form.js') }}"></script>
     <script src="{{ asset('asset/js/jquery.js') }}"></script>
@@ -174,6 +181,7 @@
 
         $("#sms_login").on('submit', function(e){
             e.preventDefault()
+            alert('kk');
             var data = {
                 email : $("#email").val(),
                 password : $("#password").val()
@@ -199,17 +207,26 @@
                 "progressBar": true,
                 "showDuration": "200",
                 "hideDuration": "1000",
-                "timeOut": "4000",
+                "timeOut": "2000",
                             }
             toastr["success"]("Redirecting to home","Login Success");
             setTimeout(function(){
                 window.location = "{{ route('home') }}"
-            },4000);
+            },2     2000);
            })
-
-
-
         })
+        $('#activate_profile').click(function(){
+            $("#activate_modal").modal({
+                focus: true
+            });
+        })
+        $("#profile_ac_form").submit(function(e){
+            e.preventDefault()
+            var data = getData($(this));
+            console.log(data);
+
+
+         })
     </script>
     </body>
 </html>

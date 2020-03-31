@@ -4,25 +4,40 @@
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-10">
-            <div class="card">
-                <div class="card-header d-flex">
-                 <div class="col-8">Profile</div>
+            <div class="card border-0">
+                <div class="card-header d-flex bg-white">
+                 <div class="col-8">Student Profile</div>
                  <div class="col-4 text-right">
+                    <a class="text-center links" href="#">Change Profile Picture</a>
                     <button id="edit_profile" class="btn"><i class="fas fa-user-edit"></i></button>
                    </div>
                 </div>
-                <div class="card-body profile_body">
-                    <div class="pre_loader col-md-8 m-auto">
+                <div class="card-body profile_body bg-white">
+                    <div class="pre_loader bg-white col-md-12 m-auto">
                         <img src="{{ asset('asset/img/gloader.gif') }}" alt="">
                     </div>
                     <div class="row">
                         @if($user->profile==null)
-                        <p> Your profile is not ready yet</p>
-                            <a class="btn btn-outline-secondary" href="#" id="edit_profile">Click Here to Setup your profile</a>
+                       <div class="col-md-6 col-sm-12 m-auto text-center">
+                        <p class="mt-5"> Your profile is not ready yet</p>
+                       </div>
                         @else
-                        <div class="col-md-6 profile_info">
-                            {{ $user->profile ?? 'Dispaly Name'}}
-                            <a class="btn btn-outline-secondary" href="#" id="edit_profile">Edit your profile</a>
+                        <div class="col-md-6 col-sm-6 profile_info">
+                            <div class="w-100 d-block">
+                                <span class="user_name"><i class="fas fa-user"></i> {{ $user->name }}</span>
+                            <span class="faculty px-2"> {{ $user->profile->faculty }}</span> | <span class="sem">Semester {{ $user->profile->sem }}</span>
+
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-sm-6">
+                            <div class="pp mb-3" style=" background-image:url({{ asset('asset/img/'.strtolower($user->name).'.jpg') }}")>
+                            </div>
+
+                            <hr>
+                            <div class="social_links">
+                            <a href="{{ $user->profile->fb }}"><i class="fab fa-facebook-square"></i></a>
+                            <a href="{{ $user->profile->gh }}"><i class="fab fa-github-square"></i></a>
+                            </div>
                         </div>
                         @endif
                     </div>
@@ -33,7 +48,7 @@
 </div>
 <div class="modal fade bd-example-modal-lg" id="edit_modal" tabindex="-1" role="dialog" aria-hidden="true">
     <div class="modal-dialog modal-lg">
-      <div class="modal-content">
+      <div class="modal-content g-modal">
         <div class="modal-header">Edit Profile</div>
         <form method="post" id="profile_ed_form">
         <div class="modal-body">
@@ -115,6 +130,7 @@
             });
             var fac = localStorage.getItem('faculties');
             fac = JSON.parse(fac);
+            $("#fac_opt").empty();
             for (let index = 0; index < fac[0].length; index++) {
                 const element = fac[0][index];
                 $("#fac_opt").append("<option value='"+element+"'>"+element+"</option>");
@@ -154,6 +170,8 @@
                 $("#edit_sub").html("save")
                 })
          })
+
+         
 
 
 

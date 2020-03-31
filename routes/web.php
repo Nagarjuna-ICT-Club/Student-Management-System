@@ -15,10 +15,14 @@ use Illuminate\Support\Facades\Route;
 
 Route::middleware('guest')->get('/', function () {
     return view('welcome');
-});
+})->name('welcome');
 
 Auth::routes(['register' => false]);
 
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/profile', 'HomeController@profile')->name('profile');
 Route::post('/edit_profile/{id}','HomeController@EditProfile')->name('edit_profile');
+Route::get('/test', function(){
+    return view('test');
+});
+Route::post('/curl','HOmeController@curl');

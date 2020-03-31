@@ -6,7 +6,8 @@ use App\Model\Profile;
 use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-
+Use Ixudra\Curl\Facades\Curl;
+use Hash;
 class HomeController extends Controller
 {
 
@@ -60,4 +61,44 @@ class HomeController extends Controller
         }
 
     }
+    public function curl(Request $request)
+    {
+        
+
+        $data = json_encode($request->all());
+        // dd($data);
+        $response = Curl::to('http://sudeepmishra.com.np/new_student')
+        ->withData($data )
+        ->withContentType('application/json')
+        ->returnResponseObject()
+        ->asJson( true )
+        ->get();
+
+        // $client = new \GuzzleHttp\Client();
+        // $url = "http://localhost/api/public/new_student";
+        // $data = $request->all();
+        // $data = json_encode($data);
+        // $request = $client->get($url,  ['body'=>$data]);
+        // $response = $request->sendAsync();
+
+        dd($response);
+
+       // curl_init();
+    //    $data = $request->all();
+    //    $data = json_encode($data);
+    //    // dd($output);
+    //    $url = "http://localhost/api/public/new_student";  // url where the data should be posted to
+    //     $headers=array("Accept: application/json","Content-Type: application/json");
+
+    //     $curl = curl_init();
+    //     curl_setopt($curl, CURLOPT_URL, $url);
+    //     curl_setopt($curl, CURLOPT_HEADER, $headers);
+    //     curl_setopt($curl, CURLOPT_POST, 0);
+    //     curl_setopt($curl, CURLOPT_POSTFIELDS,$data);
+    //     $myResponse = curl_exec ($curl);
+    //     curl_close ($curl);
+        //dd($myResponse);
+    }
+
+
 }

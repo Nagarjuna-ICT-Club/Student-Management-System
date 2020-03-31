@@ -1,4 +1,4 @@
-body{
+#login_body{
     background: linear-gradient(90deg, #97C8F9, #9FE7EE);
     font-family: "Poppins";
 }
@@ -56,8 +56,22 @@ body{
     padding: 5px;
 }
 .g-btn{
-    background-color: #32cd32 !important;
+    background-color: #76d976 !important;
     border: #32cd32 !important;
+
+}
+.g-btn:focus, .g-btn:active, .g-btn:hover{
+    outline: 0 !important;
+    border: 1px solid #32cd32 !important;
+    background-color: transparent !important;
+    color: #32cd32 !important;
+    box-shadow: none !important;
+}
+.g-bg{
+    background-color: #76d976;
+}
+.g-color{
+    color: #76d976;
 }
 .navbar-toggler-icon {
     vertical-align: middle;
@@ -81,7 +95,7 @@ body{
     font-size: 20px;
 }
 .profile_body .pre_loader{
-    position: fixed;
+    position: absolute;
     z-index: 9;
     text-align: center;
     width: 100%;
@@ -90,11 +104,46 @@ body{
     z-index: 174;
     /* flex: 1 1 auto; */
     padding: 52px;
-    left: 228px;
+    left: 0;
+}
+.profile_body .pre_loader img{
+    width: 20%;
+    margin: auto;
 }
 .profile_body{
     min-height: 475px;
     background: #f1f2f3;
+}
+
+.dropdown-item:hover, .dropdown-item:active{
+    background: none !important;
+    color: black !important;
+}
+.g-modal{
+
+    background-clip: padding-box;
+    border: 1px solid rgb(118, 217, 118);
+    border-radius: 17px;
+
+}
+.pp{
+    width: 50%;
+    height: 235px;
+    background-position: center;
+    margin: auto;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 20px;
+}
+
+.profile_info .user_name{
+    font-size: 30px;
+    display: block;
+}
+.dropdown-menu{
+    top: 16px !important;
+    left: 6px !important;
+    background-color: #74b9ff;
 }
 
 @media (max-width: 576px) {
