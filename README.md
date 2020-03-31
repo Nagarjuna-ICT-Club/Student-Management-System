@@ -2,7 +2,7 @@
 
 
 ![Logo](
-    C:\Users\DELL\Desktop\project101\logo.JPG "Logo")
+    public/asset/img/logo.png "Logo")
 
 
 ### **Getting Started**
