@@ -1,4 +1,4 @@
-## **Student Management System**
+﻿## **Student Management System**
 
 <p align="center">
  <img src="/public/asset/img/logo.png" width="200">
