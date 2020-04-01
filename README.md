@@ -11,8 +11,7 @@
 
 ### **Purpose**
 
- The design and implementation of a student 
-information      system    and    user   interface  is   to  replace students' paper records through
+ The design and implementation of a student Management      system    and    user   interface  is   to  replace students' paper records through
 secure,  online  interface  embedded  in  the  college’s  website. 
 
 
