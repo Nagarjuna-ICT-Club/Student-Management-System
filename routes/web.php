@@ -27,9 +27,13 @@ Route::get('/test', function(){
 });
 Route::post('/curl','HOmeController@curl');
 
-Route::prefix('appilications')->name('applications.')->group(function () {
-    Route::get('/','ApplicationController@index')->name('home');
+Route::prefix('application')->name('application.')->group(function () {
+    Route::get('/{any}', function () { return view('application'); })->where('any', '.*')->name('home');
 });
 
-Route::get('api/getUser','ApiController@getUser');
 
+Route::prefix('api')->name('api.')->group(function () {
+    Route::get('getUser','ApiController@getUser');
+    Route::post('getApplications','ApplicationController@all');
+
+});

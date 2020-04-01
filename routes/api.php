@@ -25,3 +25,4 @@ Route::get('faculties', function () {
 })->name('api.faculties');
 
 Route::post('/buildCred','ApiController@BuildCred')->name('api.create_account');
+

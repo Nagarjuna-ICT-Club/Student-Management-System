@@ -1,23 +1,39 @@
 require('./bootstrap');
 
-
-import axios from 'axios';
-
+const url = 'http://localhost:8000';
 window.Vue = require('vue');
-const url = 'http://localhost:800';
+import axios from 'axios';
+import  BootstrapVue  from 'bootstrap-vue';
+import Application from './views/Application';
+import {routes} from './routes';
+import VueRouter from 'vue-router';
+
+Vue.use(VueRouter)
+
+// Install BootstrapVue
+Vue.use(BootstrapVue)
+Vue.use(url);
 
 
-
-Vue.component('example-component', require('./components/ExampleComponent.vue').default);
 Vue.component('nav-com', require('./components/Nav.vue').default);
-
-
-/**
- * Next, we will create a fresh Vue application instance and attach it to
- * the page. Then, you may begin adding components to this application
- * or customize the JavaScript scaffolding to fit your unique needs.
- */
+Vue.component('side-bar', require('./components/Sidebar.vue').default);
 Vue.use(axios);
+
+const router = new VueRouter({
+    mode: 'history',
+    routes: routes
+});
+
 const app = new Vue({
     el: '#app',
+    router: router,
 });
+
+
+
+const application = new Vue({
+    el: '#application',
+    router: router,
+    render: h => h(Application),
+});
+

@@ -1,8 +1,218 @@
 // Fonts
 @import url('https://fonts.googleapis.com/css?family=Nunito');
+@import 'node_modules/bootstrap/scss/bootstrap';
 
 // Variables
 @import 'variables';
 
-// Bootstrap
-@import '~bootstrap/scss/bootstrap';
+
+
+#login_body{
+    background: linear-gradient(90deg, #97C8F9, #9FE7EE);
+    font-family: "Poppins";
+}
+.clr-white
+{
+    color: white;
+}
+.login-wrapper{
+    min-width: 340px;
+    margin: auto;
+    max-height: fit-content;
+    background-color: white;
+}
+.login-input, .form-input{
+    border: 0px solid #ced4da;
+    border-bottom: 1px solid #00000052;
+    border-radius:0px;
+}
+
+.login-form{
+    padding: 30px;
+}
+.login-form img{
+   width: 57%;
+    padding: 8px;
+}
+.img-container {
+    padding: 25px 0px;
+    box-sizing: border-box;
+    box-shadow: 1px 1px 7px -3px;
+    border-radius: 54%;
+    margin-bottom: 10px !important;
+}
+.other_link{
+    text-align: right;
+}
+
+.sh{
+    position: absolute;
+    padding: 0;
+    margin: 0;
+    right: 20px;
+}
+.sh:focus{
+    outline: 0 !important;
+    box-shadow: none !important;
+}
+.login-input:focus, .form-input:focus{
+    outline: 0 !important;
+    box-shadow: none;
+}
+.label{
+    background: #32cd32;
+    color: white;
+    padding: 5px;
+}
+.g-btn{
+    background-color: #76d976 !important;
+    border: #32cd32 !important;
+
+}
+.g-btn:focus, .g-btn:active, .g-btn:hover{
+    outline: 0 !important;
+    border: 1px solid #32cd32 !important;
+    background-color: transparent !important;
+    color: #32cd32 !important;
+    box-shadow: none !important;
+}
+.g-bg{
+    background-color: #76d976;
+}
+.g-color{
+    color: #76d976;
+}
+.navbar-toggler-icon {
+    vertical-align: middle;
+    background: no-repeat center center;
+    background-size: 100% 100%;
+    display: inline;
+}
+.navbar-toggler {
+    padding: 1px 10px;
+    font-size: 1.25rem;
+    line-height: 1;
+    /* background-color: limegreen; */
+    border: 1px solid transparent;
+    border-radius: 0.25rem;
+    outline: 1px solid #32cd32;
+}
+.navbar-toggler:focus{
+    outline: none;
+}
+.navbar-toggler i{
+    font-size: 20px;
+}
+
+.dropdown-toggle:focus, .dropdown-toggle:active{
+    border: none;
+    outline: 0;
+}
+.dropdown{
+    list-style: none;
+}
+.profile_body .pre_loader{
+    position: absolute;
+    z-index: 9;
+    text-align: center;
+    width: 100%;
+    height: 450px;
+    background: #f1f2f3;
+    z-index: 174;
+    /* flex: 1 1 auto; */
+    padding: 52px;
+    left: 0;
+}
+.profile_body .pre_loader img{
+    width: 20%;
+    margin: auto;
+}
+.profile_body{
+    min-height: 475px;
+    background: #f1f2f3;
+}
+
+.dropdown-item:hover, .dropdown-item:active{
+    background: none !important;
+    color: black !important;
+}
+.g-modal{
+
+    background-clip: padding-box;
+    border: 1px solid rgb(118, 217, 118);
+    border-radius: 17px;
+
+}
+.pp{
+    width: 50%;
+    height: 235px;
+    background-position: center;
+    margin: auto;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 20px;
+}
+
+.profile_info .user_name{
+    font-size: 30px;
+    display: block;
+}
+.dropdown-menu{
+    top: 16px !important;
+    left: 6px !important;
+    background-color: #74b9ff;
+}
+.add_app{
+
+        position: fixed;
+        bottom: 10px;
+        right: 15px;
+
+}
+.add_app i{
+    font-size: 45px;
+    color: #25b58d;
+}
+
+@media (max-width: 576px) {
+    .login-wrapper{
+        max-width: 100% !important;
+    }
+    .other_link{
+        text-align: left;
+    }
+    .img-container {
+        width: 40%;
+    }
+ }
+// Small devices (landscape phones, 576px and up)
+@media (min-width: 576px) {
+    .login-wrapper{
+        max-width: 100% !important;
+    }
+    .img-container {
+        width: 30%;
+    }
+ }
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) {
+    .img-container {
+        width: 50%;
+    }
+ }
+
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) {
+
+ }
+
+// Extra large devices (large desktops, 1200px and up)
+@media (min-width: 1200px) {
+    .login-wrapper{
+        max-width: 80% !important;
+    }
+    .img-container {
+        width: 50%;
+    }
+ }

@@ -18,6 +18,8 @@ class CreateApplicationsTable extends Migration
             $table->string('student_id');
             $table->string('subject');
             $table->string('body');
+            $table->string('duration');
+            $table->boolean('status');
             $table->timestamps();
         });
     }
