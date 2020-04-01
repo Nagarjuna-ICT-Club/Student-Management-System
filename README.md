@@ -2,7 +2,7 @@
 
 
 ![Logo](
-    /public/asset/img/logo.png "Logo")
+    /public/asset/img/logo.png =20x30 "Logo")
 
 
 ### **Getting Started**
