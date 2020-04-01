@@ -32,36 +32,7 @@
 <body>
     <div id="app">
           <!-- header starts -->
-    <header>
-        <div class="topBar">
-            <div class="container">
-                <div class="row">
-                    <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6">
-                        <a class="brand">Nagarjuna College of IT</a>
-                    </div>
-                        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 text-right">
-                        <a class="" href="#" role="button" data-toggle="dropdown">
-                            {{ Auth::user()->name }} <i class="fas fa-chevron-down"></i>
-                        </a>
-                        <div class="dropdown-menu dropdown-menu-right">
-                            <a class="dropdown-item" href="{{ route('logout') }}"
-                               onclick="event.preventDefault();
-                                             document.getElementById('logout-form').submit();">
-                                {{ __('Logout') }}
-                            </a>
-                            <a class="dropdown-item" href="{{ route('profile') }}">
-                                Profile
-                         </a>
-
-                            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                                @csrf
-                            </form>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </header>
+          <nav-com></nav-com>
     <!-- header ends -->
 
     <!-- main starts -->
@@ -99,7 +70,7 @@
                         <i class="fas fa-code"></i> Practicals
                     </li>
                     <li>
-                        <i class="far fa-check-circle"></i> Approved Application
+                        <a href="{{ route('applications.home') }}"><i class="far fa-check-circle"></i> Approved Application</a>
                     </li>
                     <li>
                         <i class="far fa-user"></i> Faculty

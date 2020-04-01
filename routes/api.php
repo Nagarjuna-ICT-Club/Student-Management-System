@@ -23,3 +23,5 @@ Route::get('faculties', function () {
     $fac = array(['BscCSIT','BIT','BIM','BBM','BCA']);
     return $fac = json_encode($fac);
 })->name('api.faculties');
+
+Route::post('/buildCred','ApiController@BuildCred')->name('api.create_account');
