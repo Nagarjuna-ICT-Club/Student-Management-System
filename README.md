@@ -1,9 +1,7 @@
 ## **Student Management System**
 
 
-![Logo](
-    C:\Users\DELL\Desktop\project101\logo.JPG=100x "Logo")
-
+<img src="/public/asset/img/logo.png" width="200">
 
 ### **Getting Started**
 
