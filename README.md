@@ -1,9 +1,7 @@
 ## **Student Management System**
 
 
-![Logo](
-    /public/asset/img/logo.png =20x30 "Logo")
-
+<img src="/public/asset/img.logo.png" width="200">
 
 ### **Getting Started**
 
