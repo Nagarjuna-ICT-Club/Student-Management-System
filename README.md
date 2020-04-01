@@ -1,7 +1,7 @@
 ## **Student Management System**
 
 
-<img src="/public/asset/img.logo.png" width="200">
+<img src="/public/asset/img/logo.png" width="200">
 
 ### **Getting Started**
 
