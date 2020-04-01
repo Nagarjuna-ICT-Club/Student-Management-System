@@ -2,7 +2,7 @@
 
 
 ![Logo](
-    C:\Users\DELL\Desktop\project101\logo.JPG=100x "Logo")
+    public/asset/img/logo.png=100x "Logo")
 
 
 ### **Getting Started**
