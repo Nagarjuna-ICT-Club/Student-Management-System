@@ -7,7 +7,7 @@
 
 ### **Getting Started**
 
-     Student Management System(SMS) provides a simple interface for the maintenance of student management. It can be used by educational institute like college to maintain student's record. 
+Student Management System(SMS) provides a simple interface for the maintenance of student management. It can be used by educational institute like college to maintain student's record. 
 
 ### **Purpose**
 
