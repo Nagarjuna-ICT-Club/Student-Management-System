@@ -2,7 +2,7 @@
 
 
 ![Logo](
-    public/asset/img/logo.png=100x "Logo")
+    /public/asset/img/logo.png=100x "Logo")
 
 
 ### **Getting Started**
