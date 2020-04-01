@@ -79,8 +79,9 @@ related to students, batch, course, faculty, exams, semesters, certification and
 ### **Built with**
 
 - Visual Studio Code
-- Laravel, SQL
-- Html 5
+- Laravel, SQL, Vue
+- Html 5 and CSS3
+- Javascript
 
 
 
