@@ -26,3 +26,10 @@ Route::get('/test', function(){
     return view('test');
 });
 Route::post('/curl','HOmeController@curl');
+
+Route::prefix('appilications')->name('applications.')->group(function () {
+    Route::get('/','ApplicationController@index')->name('home');
+});
+
+Route::get('api/getUser','ApiController@getUser');
+

@@ -16,13 +16,13 @@ class CreateProfilesTable extends Migration
         Schema::create('profiles', function (Blueprint $table) {
             $table->id();
             $table->string('student_id');
-            $table->string('faculty');
-            $table->string('sem')->eval(1,2,3,4,5,6,7,8);
+            $table->string('program_id');
+            $table->string('semester_id');
             $table->string('bio')->nullable();
             $table->string('fb')->nullable();
             $table->string('gh')->nullable();
             $table->string('li')->nullable();
-            $table->string('phone');
+            $table->string('contact_number');
             $table->timestamps();
         });
     }
