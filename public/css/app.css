@@ -11060,7 +11060,7 @@ a.text-dark:focus {
   display: block;
 }
 
-.dropdown-menu {
+.topnav .dropdown-menu {
   top: 16px !important;
   left: 6px !important;
   background-color: #74b9ff;
@@ -11070,11 +11070,42 @@ a.text-dark:focus {
   position: fixed;
   bottom: 10px;
   right: 15px;
+  z-index: 99;
 }
 
 .add_app i {
   font-size: 45px;
   color: #25b58d;
+}
+
+.app-body {
+  line-height: 2.5;
+}
+
+.bg-approved {
+  background-color: #47e061a8;
+}
+
+.bg-pending {
+  background-color: #74b9ff;
+}
+
+#nprogress .spinner-icon {
+  width: 20px !important;
+  height: 20px !important;
+  box-sizing: border-box;
+  border: solid 2px transparent;
+  border-top-color: #ffffff !important;
+  border-left-color: #ffffff !important;
+}
+
+#nprogress .peg {
+  box-shadow: none !important;
+}
+
+#nprogress .bar {
+  background: #fdfffd !important;
+  height: 4px !important;
 }
 
 @media (max-width: 576px) {

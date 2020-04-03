@@ -1,20 +1,8 @@
 @extends('layouts.app')
 @section('title','Home')
+@section('bread', 'Home')
 @section('content')
-<div class="container">
-    <!-- page title starts -->
-    <div class="pageTitle">
-        <div class="row">
-            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6">
-                <i class="fas fa-home"></i> Home
-            </div>
-            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 text-right">
-                Today: <span class="date">Mar 24</span>
-            </div>
-        </div>
-    </div>
-    <!-- page title ends -->
-    <hr />
+
 
     <!-- status cards starts -->
     <div class="statusCards">

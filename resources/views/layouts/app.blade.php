@@ -18,6 +18,8 @@
             <!-- tailwind css -->
             <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
             <!-- main css -->
+            <link href="https://unpkg.com/nprogress@0.2.0/nprogress.css" rel="stylesheet" />
+            <script src="https://unpkg.com/nprogress@0.2.0/nprogress.js"></script>
             <link rel="stylesheet" href="{{ asset("asset/css/style.css") }}">
                 <script>
                     WebFont.load({
@@ -41,6 +43,20 @@
             <!-- Sidebar  -->
             <!-- here the class active is used to hide the sidebar -->
             <side-bar></side-bar>
+            <div class="container">
+                <!-- page title starts -->
+                <div class="pageTitle">
+                    <div class="row">
+                        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6">
+                            <i class="fas fa-home"></i> @yield('bread')
+                        </div>
+                        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 text-right">
+                        Today: <span class="date">{{ date('d M') }}</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- page title ends -->
+                <hr />
             @yield('content')
         </main>
     </div>
@@ -60,7 +76,7 @@
 <!-- chart js -->
 <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
  <!-- custom js -->
-<script src={{ asset("asset/js/script.js") }}></script>
+<script src="{{ asset("asset/js/script.js") }}"></script>
 <script>
      $.ajaxSetup({
                     headers: {

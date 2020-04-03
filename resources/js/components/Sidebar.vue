@@ -21,7 +21,7 @@
                         <i class="fas fa-scroll"></i> Results
                     </li>
                     <li>
-                        <i class="far fa-envelope"></i> Messages
+                        <i class="far fa-envelope"></i> Messages <div class="badge badge-pill badge-warning">{{ this.count }}</div>
                     </li>
                     <li>
                         <i class="fas fa-gift"></i> Opportunities
@@ -44,3 +44,36 @@
             </div>
 </div>
 </template>
+<script>
+    export default {
+        data() {
+            return {
+                user_id:" ",
+                count:{ },
+                api:"",
+
+            }
+        },
+        created() {
+            axios.get('http://localhost:8000/api/getUser')
+                .then(response => {
+                    this.user_id = response.data.user_id;
+                     this.api = 'http://sudeepmishra.com.np/api/newmsg_count/'+this.user_id;
+                        axios.get(this.api)
+                        .then(response => {
+                            // console.log(response.data)
+                            this.count = response.data.count;
+                        });
+                });
+            axios.interceptors.request.use( config=>{
+                    NProgress.start()
+                    return config;
+                })
+            axios.interceptors.response.use(response => {
+                    NProgress.done()
+                    return response;
+            })
+        },
+
+    }
+</script>

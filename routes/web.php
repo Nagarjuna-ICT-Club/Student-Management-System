@@ -28,12 +28,13 @@ Route::get('/test', function(){
 Route::post('/curl','HOmeController@curl');
 
 Route::prefix('application')->name('application.')->group(function () {
+    Route::get('/', function () { return view('application'); });
     Route::get('/{any}', function () { return view('application'); })->where('any', '.*')->name('home');
 });
 
 
 Route::prefix('api')->name('api.')->group(function () {
     Route::get('getUser','ApiController@getUser');
-    Route::post('getApplications','ApplicationController@all');
-
+    Route::get('getApplications','ApplicationController@all');
+    Route::post('add_app','ApplicationController@create');
 });

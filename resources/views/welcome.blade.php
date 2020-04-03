@@ -56,7 +56,7 @@
                                                 </div>
                                                 <div class="eye">
                                                         <button class="btn sh" id="hide_show" data-ac="0"><i class="la la-2x la-eye"></i></button>
-                                                </div>     
+                                                </div>
                                                 <span class="invalid-feedback" role="alert">
                                                     <strong class="error-password"></strong>
                                                 </span>
@@ -196,7 +196,7 @@
         })
         $("#profile_ac_form").submit(function(e){
             e.preventDefault()
-            var data = {email: $("#check_email").val()} 
+            var data = {email: $("#check_email").val()}
            axios.post('http://sudeepmishra.com.np/api/check_email/',data)
             .then(function(response){
                 if(response.data==""){
@@ -217,15 +217,15 @@
                     toastr["success"](res.data.message);
                      $("#activate_modal").modal('hide');
                      $("#email").val(res.data.email);
-                   }).catch(err => console.log(err)); 
+                   }).catch(err => console.log(err));
                 }
             })
             .catch(error => console.log(error));
-          
-            
+
+
          })
          //var updated =
-       
+
         // var profile = axios.post('http://sudeepmishra.com.np/new_student/',updated);
         // console.log(profile);
     </script>

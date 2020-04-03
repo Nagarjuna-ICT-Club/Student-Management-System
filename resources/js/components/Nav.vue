@@ -2,7 +2,7 @@
     <header>
         <div class="topBar">
             <div class="container">
-                <div class="row">
+                <div class="row topnav">
                     <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6">
                         <a class="brand" href="/">Nagarjuna College of IT</a>
                     </div>
@@ -15,9 +15,7 @@
                             right>
 
                             <b-dropdown-item>
-                                <a class="dropdown-item" href="#"
-                                    onclick="event.preventDefault();
-                                             document.getElementById('logout-form').submit();">
+                                <a class="dropdown-item" href="#" v-on:click="logout">
                                Logout
                             </a>
                             </b-dropdown-item>
@@ -27,9 +25,7 @@
                                     </a>
                                 </b-dropdown-item>
                         </b-nav-item-dropdown>
-                            <form id="logout-form" action="#" method="POST" style="display: none;">
-                                <!-- @csrf -->
-                            </form>
+
                         </div>
                 </div>
             </div>
@@ -41,6 +37,7 @@
         data() {
             return {
                 user:" ",
+
             }
         },
         created() {
@@ -50,5 +47,14 @@
                     this.user = response.data.user;
                 });
         },
+        methods: {
+            logout: function () {
+                  axios
+                .post('http://localhost:8000/logout')
+                .then(response => {
+                    window.location.replace('http://localhost:8000/');
+                });
+            }
+        }
     }
 </script>

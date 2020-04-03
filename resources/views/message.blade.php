@@ -1,6 +1,6 @@
 @extends('layouts.app')
-@section('title','Application')
-@section('bread', 'Application')
+@section('title','Message')
+@section('bread', 'Message')
 @section('content')
     <!-- page title starts -->
     <div id="application"></div>

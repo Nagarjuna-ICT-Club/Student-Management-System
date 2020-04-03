@@ -22,12 +22,12 @@ class ApiController extends Controller
        } else {
           return response()->json(['message'=>'failed to activate account']);
        }
-       
+
     }
 
     public function getUser()
     {
-       $user = Auth::user()->full_name;
-       return response()->json(['user'=>$user]);
+       $user = Auth::user();
+       return response()->json(['user'=>$user->full_name,'user_id'=>$user->uid]);
     }
 }
