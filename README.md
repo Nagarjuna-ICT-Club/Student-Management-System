@@ -83,7 +83,7 @@ related to students, batch, course, faculty, exams, semesters, certification and
 - Html 5 and CSS3
 - Javascript
 
-
+### Author: Garima KC
 
 
 
