@@ -1,5 +1,6 @@
 <template>
-         <div class="row">
+<div class="row">
+    <router-link :to="{ name: 'add_app'}" class="add_app" id="add_app"><i class="fas fa-plus-circle"></i></router-link>
              <div class="col-xl-10 col-md-10 col-sm-12 m-auto">
                 <div class="d-block mt-4">
                     <div class="application-wrapper mb-4" v-for="app in this.apps" :key="app.id">
@@ -26,16 +27,12 @@ export default {
             }
         },
          mounted(){
-             $(document).ready(function() {
-                 $("#add_app").show()
-             })
                 console.log(this.user_id);
-
-    },
+        },
 
         created() {
 
-            axios.get('http://localhost:8000/api/getUser')
+            axios.get('/api/getUser')
             .then(response => {
                 this.user_id = response.data.user_id;
                 this.api = 'http://sudeepmishra.com.np/api/my_applications/'+this.user_id;

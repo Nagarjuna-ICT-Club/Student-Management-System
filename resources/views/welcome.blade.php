@@ -4,12 +4,14 @@
         <meta charset="utf-8"/>
             <meta name="csrf-token" content="{{ csrf_token() }}" />
             <title>SMS | Login</title>
-            <link rel="shortcut icon" href="{{ asset('assets/media/fav.ico') }}">
+            <link rel="shortcut icon" href="{{ asset('asset/img/logo.png') }}" type="image/x-icon">
             <meta name="description" content="Latest updates and statistic charts">
             <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
             <link href="{{ asset('asset/css/bootstrap.min.css') }}" rel="stylesheet" type="text/css" />
             <link href="{{ asset('asset/css/vendor.min.css')}}" rel="stylesheet" type="text/css" />
+            <link href="{{ asset('asset/css/login.css') }}" rel="stylesheet" type="text/css" />
             <link href="{{ asset('css/app.css') }}" rel="stylesheet" type="text/css" />
+            <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
             <link href="{{ asset('css/toastr.css') }}" rel="stylesheet" type="text/css" />
             <script src="{{ asset('asset/js/webfont.js')}}"></script>
     <script>
@@ -21,91 +23,56 @@
         });
     </script>
     </head>
-    <body id="login_body">
-        <nav class="navbar navbar-expand-lg navbar-light clr-white">
-            <div class="container">
-                <p><i class="la la-arrow-left"></i> Back to page</p>
-            </div>
-          </nav>
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-8 col-sm-12 m-auto">
-                        <div class="login-box mt-5 mb-5">
-                            <div class="col-md-8 col-sm-12 m-auto">
-                                <div class="login-wrapper">
-                                    <div class="login-form">
-                                        <div class="col-6 m-auto text-center img-container">
-                                            <img src="{{ asset('asset/img/logo.png') }}" alt="logo">
-                                        </div>
-                                    <form method="POST" id="sms_login">
-                                        @csrf
-                                        <div class="form-group row">
-                                            <label for="email" class="col-2 px-0 text-md-right"><i class="la la-2x la-user"></i></label>
-                                            <div class="col-10">
-                                                <input id="email" type="email" class="form-control @error('email') is-invalid @enderror login-input" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus placeholder="Username">
-                                                <span class="invalid-feedback" role="alert">
-                                                    <strong class="error-email"></strong>
-                                                </span>
-                                            </div>
-                                        </div>
-                                        <div class="form-group row">
-                                            <label for="password" class="col-2 px-0 mx-0 text-md-right"><i class="la la-2x la-key"></i></label>
-                                            <div class="col-10 d-flex">
-                                                <div class="w-100">
-                                                        <input id="password" type="password" class="form-control @error('password') is-invalid @enderror  login-input" name="password" required autocomplete="current-password" placeholder="Password">
-                                                </div>
-                                                <div class="eye">
-                                                        <button class="btn sh" id="hide_show" data-ac="0"><i class="la la-2x la-eye"></i></button>
-                                                </div>
-                                                <span class="invalid-feedback" role="alert">
-                                                    <strong class="error-password"></strong>
-                                                </span>
-                                            </div>
-                                            @if (Route::has('password.request'))
-                                            <a href="{{ route('password.request') }}" class="text-md-right offset-3">
-                                                {{ __('Forgot Your Password?') }}
-                                            </a>
-                                        @endif
-                                        </div>
-                                        <div class="form-group row mb-0">
-                                            <div class="col-md-10 offset-2">
-                                                <button type="submit" class="btn btn-primary btn-block mb-2" id="sms_lg_sub">
-                                                    {{ __('Login') }}
-                                                </button>
-                                            </div>
-                                            <div class="col-md-10 offset-2">
-                                                <button type="button" class="btn g-btn btn-block" id="activate_profile">
-                                                    Activate Your Account
-                                                </button>
-                                            </div>
-                                        </div>
-                                    </form>
-                                </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+    <body class="container">
+        <!-- header starts -->
+        <header>
+            <a href="#" class="backPage"><i class="fas fa-arrow-left"></i> Back to page</a>
+        </header>
+        <!-- header ends -->
+
+        <!-- main starts -->
+        <main class="mx-auto">
+            <img src="{{ asset('asset/img/logo.png') }}" alt="Nagarjuna College of IT Logo" class="mx-auto">
+            <form method="POST" id="sms_login">
+                @csrf
+                <div class="">
+                <label for="email"><i class="far fa-user-circle"></i></label>
+                <input type="email" placeholder="Email" id="email" class=" @error('email') is-invalid @enderror" required autocomplete="email" autofocus/>
+                <span class="invalid-feedback" role="alert">
+                    <strong class="error-email"></strong>
+                </span>
+                </div>
+                <div class="password-container ">
+                    <label for="password"><i class="fas fa-key"></i></label>
+                    <input placeholder="Password" id="passwordInput"  type="password" class="@error('password') is-invalid @enderror" name="password" required />
+                    <button><i id="eyeContainer" class="fas fa-eye-slash"></i></button>
+                    <span class="invalid-feedback" role="alert">
+                        <strong class="error-password"></strong>
+                    </span>
+                </div>
+                @if (Route::has('password.request'))
+                <a href="{{ route('password.request') }}" class=" forgot">Forgot Password?</a>
+                @endif
+                     <button type="submit" class="btn submit"  id="sms_lg_sub">Login</button>
+            </form>
+        </main>
+        <!-- mains ends -->
+
+
+        <!-- footer starts -->
+        <footer>
+            <div class="row">
+                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
+                    &copy; Nagarjuna College of IT. All Rights Reserved
+                </div>
+                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 text-xl-right text-lg-right text-md-right">
+                    <ul>
+                        <li><a href="">About</a></li>
+                        <li><a href="">Contact</a></li>
+                    </ul>
                 </div>
             </div>
-            <footer class="mt-5 text-white">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-md-6 col-sm-6">
-                            <div class="text-left">
-                                <p class="text-white"><i class="la la-copyright"></i>  All Right Reserved</p>
-                            </div>
-                        </div>
-                        <div class="col-md-6 col-sm-6">
-                            <div class="other_link">
-                                <a href="#" class="text-white px-1" >About</a>
-                                <a href="#" class="text-white px-1">Contact</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </footer>
-        </div>
-    </div>
+        </footer>
 <div class="modal fade bd-example-modal-lg" id="activate_modal" tabindex="-1" role="dialog" aria-hidden="true">
     <div class="modal-dialog modal-lg">
         <div class="modal-content g-modal">
@@ -139,26 +106,31 @@
                         'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
                     }
                 });
-        $("#hide_show").on('click', function(e){
-            e.preventDefault();
-            var data = $(this).data('ac');
-            if(data==0){
-                $("#password").attr("type","text");
-                $(this).html("<i class='la la-2x la-eye-slash'></i>")
-                $(this).data('ac',1);
-            }else{
-                $("#password").attr("type","password");
-                $(this).html("<i class='la la-2x la-eye'></i>")
-                $(this).data('ac',0);
+        var secured = true
+        const eyeOpen = "far fa-eye";
+        const eyeClosed = "fas fa-eye-slash";
+        const eyeContainer = document.getElementById("eyeContainer");
+        const inputBox = document.getElementById("passwordInput");
 
+        eyeContainer.addEventListener("click", function changeEye(e) {
+            e.preventDefault();
+
+            if (secured) {
+                eyeContainer.setAttribute("class", eyeOpen);
+                inputBox.setAttribute("type", "text");
+                secured = false
+            } else {
+                eyeContainer.setAttribute("class", eyeClosed);
+                inputBox.setAttribute("type", "password");
+                secured = true
             }
-        })
+        });
 
         $("#sms_login").on('submit', function(e){
             e.preventDefault()
             var data = {
                 email : $("#email").val(),
-                password : $("#password").val()
+                password : $("#passwordInput").val()
             }
            $.ajax({
                method:"POST",

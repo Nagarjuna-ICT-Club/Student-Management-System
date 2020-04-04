@@ -2,12 +2,7 @@
     <div class="container">
     <div class="pageTitle">
         <div class="row">
-            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6">
-                    <router-link :to="{ name: 'home_msg'}" id=""><i class="fas fa-book"></i> Message</router-link>
-            </div>
-            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 text-right">
-                Today: <span class="date">{{ date | moment("Do MMMM") }}</span>
-            </div>
+            Hello from messages
         </div>
     </div>
     <!-- page title ends -->
@@ -21,10 +16,35 @@ export default {
        data() {
             return {
                 apps:[],
-                date: new Date(),
+                user_id:"",
+                api:"",
             }
         },
+         mounted(){
+                console.log(this.user_id);
+        },
 
+        created() {
+
+            axios.get('http://localhost:8000/api/getUser')
+            .then(response => {
+                this.user_id = response.data.user_id;
+                this.api = 'http://sudeepmishra.com.np/api/my_applications/'+this.user_id;
+                axios.get(this.api)
+                .then(response => {
+                    // console.log(response.data.data)
+                    this.apps = response.data.data;
+                });
+            });
+            axios.interceptors.request.use( config=>{
+                    NProgress.start()
+                    return config;
+                })
+            axios.interceptors.response.use(response => {
+                    NProgress.done()
+                    return response;
+            })
+        },
 
 }
 </script>

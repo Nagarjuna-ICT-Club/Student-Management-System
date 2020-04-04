@@ -53,8 +53,6 @@ export default {
         FromMinDate.setDate(FromMinDate.getDate()+1)
          const ToMinDate = new Date(today)
         ToMinDate.setDate(FromMinDate.getDate()+1)
-
-
         return {
             fields: {},
             errors: {},
@@ -101,7 +99,7 @@ export default {
     },
     created() {
         axios
-            .get('http://localhost:8000/api/getUser')
+            .get('/api/getUser')
             .then(response => {
                 this.name = response.data.user;
             });

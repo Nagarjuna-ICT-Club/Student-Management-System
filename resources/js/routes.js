@@ -1,7 +1,7 @@
 import VueRouter from 'vue-router';
 import CreateApp from './views/CreateApp.vue';
 import AllApp from './views/AllApp.vue';
-
+import Message from './views/Message/Message.vue';
 // import AddBook from './views/AddBook.vue';
 // import EditBook from './views/EditBook.vue';
 // import Login from './views/Login.vue';
@@ -24,6 +24,11 @@ export const router = new VueRouter({
         name: 'add_app',
         path: '/application/add_app',
         component: CreateApp
+    },
+    {
+        name: 'messages',
+        path: '/messages/all',
+        component: Message
     }
 
 ]});

@@ -31,10 +31,10 @@
                 </script>
 
     </head>
-<body>
+<body id="">
     <div id="app">
           <!-- header starts -->
-          <nav-com></nav-com>
+          <nav-com user="{{ Auth::user()->full_name }}"></nav-com>
     <!-- header ends -->
 
     <!-- main starts -->
@@ -42,7 +42,7 @@
         <div class="wrapper">
             <!-- Sidebar  -->
             <!-- here the class active is used to hide the sidebar -->
-            <side-bar></side-bar>
+            <side-bar id={{ Auth::user()->uid }}></side-bar>
             <div class="container">
                 <!-- page title starts -->
                 <div class="pageTitle">
@@ -63,7 +63,23 @@
 
     <!-- footer starts -->
     <footer>
-        footer
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
+                    &copy; Nagarjuna College of IT. All Rights Reserved
+                </div>
+                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 text-right">
+                    <ul>
+                        <li>
+                            <a href="">About</a>
+                        </li>
+                        <li>
+                            <a href="">Contact</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
     </footer>
     <!-- footer ends -->
 <script src="{{ asset('js/app.js') }}"></script>

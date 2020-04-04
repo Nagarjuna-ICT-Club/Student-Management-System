@@ -10,7 +10,7 @@
                         <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 text-right">
                         <b-nav-item-dropdown
                             id="my-nav-dropdown"
-                            :text= user
+                            :text= this.user
                             toggle-class="nav-link-custom p-0"
                             right>
 
@@ -34,18 +34,21 @@
 </template>
 <script>
     export default {
-        data() {
-            return {
-                user:" ",
+        props: {
+            user: ""
+            },
+        // data() {
+        //     return {
+        //         user:" ",
 
-            }
-        },
+        //     }
+        // },
         created() {
-            axios
-                .get('http://localhost:8000/api/getUser')
-                .then(response => {
-                    this.user = response.data.user;
-                });
+            // axios
+            //     .get('http://localhost:8000/api/getUser')
+            //     .then(response => {
+            //         this.user = response.data.user;
+            //     });
         },
         methods: {
             logout: function () {

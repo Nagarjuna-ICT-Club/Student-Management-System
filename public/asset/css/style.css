@@ -6,6 +6,19 @@ html {
   overflow-x: hidden;
   font-family: "Poppins", sans-serif; }
 
+.float-action-button {
+  position: fixed;
+  bottom: 60px;
+  right: 70px;
+  padding: 20px 25px;
+  font-size: 24px;
+  border-radius: 50%;
+  font-weight: 600;
+  background: #fff;
+  -webkit-box-shadow: -5px 4px 45px 21px rgba(116, 186, 255, 0.16);
+  -moz-box-shadow: -5px 4px 45px 21px rgba(116, 186, 255, 0.16);
+  box-shadow: -5px 4px 45px 21px rgba(116, 186, 255, 0.16); }
+
 .topBar {
   background: #74b9ff;
   color: #fff;
@@ -103,6 +116,15 @@ main .wrapper {
             color: #6a6a6a; }
           main .wrapper .container .graphAndMessage .announcements .announcementCard p {
             margin: 30px 0; }
+
+footer {
+  margin-top: 30px; }
+  footer .container {
+    border-top: 0.5px solid #6a6a6a;
+    padding: 15px 0; }
+  footer ul li {
+    display: inline-block;
+    margin-left: 20px; }
 
 @media only screen and (max-width: 1199px) {
   main .wrapper .container .statusCards .icon {

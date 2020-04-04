@@ -32,6 +32,10 @@ Route::prefix('application')->name('application.')->group(function () {
     Route::get('/{any}', function () { return view('application'); })->where('any', '.*')->name('home');
 });
 
+Route::prefix('messages')->name('messages.')->group(function () {
+    Route::get('/', function () { return view('message'); });
+    Route::get('/{any}', function () { return view('message'); })->where('any', '.*')->name('home');
+});
 
 Route::prefix('api')->name('api.')->group(function () {
     Route::get('getUser','ApiController@getUser');

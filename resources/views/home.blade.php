@@ -21,7 +21,7 @@
             <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6 d-flex">
                 <div class="info">
                     <h1>
-                        80%
+                        2000%
                     </h1>
                     <span class="cardTitle">Attendance</span>
                 </div>

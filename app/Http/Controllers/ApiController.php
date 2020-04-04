@@ -22,7 +22,6 @@ class ApiController extends Controller
        } else {
           return response()->json(['message'=>'failed to activate account']);
        }
-
     }
 
     public function getUser()
