@@ -3,7 +3,7 @@
 @section('bread', 'Home')
 @section('content')
 
-
+<div id="application"></div>
     <!-- status cards starts -->
     <div class="statusCards">
         <div class="row">
@@ -186,5 +186,8 @@
     <!-- graph and message starts -->
 </div>
 </div>
+
+@endsection
+@section('js')
 
 @endsection

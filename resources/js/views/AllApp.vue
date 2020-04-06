@@ -1,7 +1,15 @@
 <template>
 <div class="row">
-    <router-link :to="{ name: 'add_app'}" class="add_app" id="add_app"><i class="fas fa-plus-circle"></i></router-link>
-             <div class="col-xl-10 col-md-10 col-sm-12 m-auto">
+    <router-link :to="{ name: 'add_app'}" class="add_app float-action-button" id="add_app">
+    <i class="far fa-edit"></i>
+</router-link>
+             <div class="col-xl-12 col-md-12 col-sm-12 mt-3">
+                 <router-link :to="{ name: 'add_app'}" class="px-4">All</router-link>
+                 <router-link :to="{ name: 'add_app'}" class="px-4">Pending</router-link>
+                 <router-link :to="{ name: 'add_app'}" class="px-4">Approved</router-link>
+                 <router-link :to="{ name: 'add_app'}" class="px-4">Cancelled</router-link>
+             </div>
+             <div class="col-xl-12 col-md-12 col-sm-12 m-auto">
                 <div class="d-block mt-4">
                     <div class="application-wrapper mb-4" v-for="app in this.apps" :key="app.id">
                         <div class="app-body p-3 border-4">

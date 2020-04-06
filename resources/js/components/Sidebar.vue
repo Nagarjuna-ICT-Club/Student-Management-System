@@ -23,6 +23,11 @@
                     <li>
                         <a href="/messages/home">
                             <i class="far fa-envelope"></i> Messages
+                            <div class="badge badge-pill badge-warning"></div>
+                        </a>
+                    </li>
+                     <li>
+                        <a href="#"><i class="fas fa-bell"></i> Notifications
                             <div class="badge badge-pill badge-warning">{{ this.count }}</div>
                         </a>
                     </li>
@@ -60,7 +65,7 @@
             }
         },
         created() {
-                this.api = 'http://sudeepmishra.com.np/api/newmsg_count/'+this.id;
+                this.api = 'http://sudeepmishra.com.np/api/not_count/'+this.id;
                         axios.get(this.api)
                         .then(response => {
                             // console.log(response.data)

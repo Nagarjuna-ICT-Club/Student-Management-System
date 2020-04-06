@@ -1,12 +1,7 @@
 <template>
     <div class="container">
-    <div class="pageTitle">
-        <div class="row">
             Hello from messages
-        </div>
-    </div>
     <!-- page title ends -->
-    <hr />
     <router-view></router-view>
     </div>
 </template>
@@ -15,9 +10,8 @@
 export default {
        data() {
             return {
-                apps:[],
-                user_id:"",
-                api:"",
+                messages:[],
+
             }
         },
          mounted(){
@@ -26,15 +20,10 @@ export default {
 
         created() {
 
-            axios.get('http://localhost:8000/api/getUser')
+            axios.get('http://localhost:8000/chat/messages')
             .then(response => {
-                this.user_id = response.data.user_id;
-                this.api = 'http://sudeepmishra.com.np/api/my_applications/'+this.user_id;
-                axios.get(this.api)
-                .then(response => {
-                    // console.log(response.data.data)
-                    this.apps = response.data.data;
-                });
+                this.messages = response.data;
+
             });
             axios.interceptors.request.use( config=>{
                     NProgress.start()

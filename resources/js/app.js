@@ -23,13 +23,27 @@ Vue.use(NProgress);
 
 Vue.component('nav-com', require('./components/Nav.vue').default);
 Vue.component('side-bar', require('./components/Sidebar.vue').default);
-
+Vue.component('chat-messages', require('./components/ChatMessage.vue').default);
+Vue.component('chat-form', require('./components/ChatForm.vue').default);
 
 
 const app = new Vue({
     el: '#app',
     router: router,
+    // data: {
+    //     messages: []
+    // },
+    // methods: {
+    //     addMessage(message) {
+    //         this.messages.push(message);
+    //         axios.post('/chat/messages', message).then(response => {
+    //           console.log(response.data);
+    //         });
+    //     }
+    // }
 });
+
+
 
 
 

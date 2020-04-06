@@ -15,9 +15,9 @@ use PHPUnit\Util\Json;
 |
 */
 
-Route::middleware('auth:api')->get('/user', function (Request $request) {
-    return $request->user();
-});
+// Route::middleware('auth:api')->get('/user', function (Request $request) {
+//     return $request->user();
+// });
 
 Route::get('faculties', function () {
     $fac = array(['BscCSIT','BIT','BIM','BBM','BCA']);

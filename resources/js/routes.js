@@ -2,6 +2,8 @@ import VueRouter from 'vue-router';
 import CreateApp from './views/CreateApp.vue';
 import AllApp from './views/AllApp.vue';
 import Message from './views/Message/Message.vue';
+import Profile from './views/Profile/Profile.vue';
+import EditProfile from './views/Profile/EditProfile.vue';
 // import AddBook from './views/AddBook.vue';
 // import EditBook from './views/EditBook.vue';
 // import Login from './views/Login.vue';
@@ -27,8 +29,18 @@ export const router = new VueRouter({
     },
     {
         name: 'messages',
-        path: '/messages/all',
+        path: '/messages/home',
         component: Message
+    },
+    {
+        name: 'profile',
+        path: '/profile',
+        component: Profile
+    },
+    {
+        name: 'profileUpdate',
+        path: '/profile/update/:user_id/:user_name',
+        component: EditProfile
     }
 
 ]});

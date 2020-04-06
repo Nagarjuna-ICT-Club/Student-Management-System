@@ -25,7 +25,9 @@
     },
     "dependencies": {
         "bootstrap-vue": "^2.9.0",
+        "laravel-echo": "^1.7.0",
         "nprogress": "^0.2.0",
+        "pusher-js": "^5.1.1",
         "vue-global-var": "^1.0.0",
         "vue-jquery": "^1.0.6",
         "vue-moment": "^4.1.0",

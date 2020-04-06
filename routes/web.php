@@ -20,19 +20,15 @@ Route::middleware('guest')->get('/', function () {
 Auth::routes(['register' => false]);
 
 Route::get('/home', 'HomeController@index')->name('home');
-Route::get('/profile', 'HomeController@profile')->name('profile');
-Route::post('/edit_profile/{id}','HomeController@EditProfile')->name('edit_profile');
-Route::get('/test', function(){
-    return view('test');
-});
+
 Route::post('/curl','HOmeController@curl');
 
-Route::prefix('application')->name('application.')->group(function () {
+Route::prefix('application')->name('application.')->middleware('auth')->group(function () {
     Route::get('/', function () { return view('application'); });
     Route::get('/{any}', function () { return view('application'); })->where('any', '.*')->name('home');
 });
 
-Route::prefix('messages')->name('messages.')->group(function () {
+Route::middleware('auth')->prefix('messages')->name('messages.')->group(function () {
     Route::get('/', function () { return view('message'); });
     Route::get('/{any}', function () { return view('message'); })->where('any', '.*')->name('home');
 });
@@ -41,4 +37,16 @@ Route::prefix('api')->name('api.')->group(function () {
     Route::get('getUser','ApiController@getUser');
     Route::get('getApplications','ApplicationController@all');
     Route::post('add_app','ApplicationController@create');
+});
+
+Route::prefix('chat')->name('chat.')->group(function () {
+    Route::get('/', 'ChatsController@index');
+    Route::get('messages', 'ChatsController@fetchMessages');
+    Route::post('messages', 'ChatsController@sendMessage');
+});
+
+Route::prefix('profile')->name('profile.')->group(function () {
+    Route::get('/{any}',function () { return view('profile.profile'); })->where('any', '.*');
+    Route::get('/',function () { return view('profile.profile'); })->where('any', '.*');
+    Route::post('/update/{id}','HomeController@EditProfile');
 });

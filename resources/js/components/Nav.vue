@@ -8,10 +8,14 @@
                     </div>
 
                         <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 text-right">
+                             <a href="#" class="px-3"><i class="fas fa-bell">
+                                 <div class="notify" style="width:2px; height:3px;"></div></i></a>
+                        <i class="fas fa-user"></i>
                         <b-nav-item-dropdown
                             id="my-nav-dropdown"
                             :text= this.user
                             toggle-class="nav-link-custom p-0"
+                            class="nav-user px-1"
                             right>
 
                             <b-dropdown-item>
@@ -20,7 +24,7 @@
                             </a>
                             </b-dropdown-item>
                                 <b-dropdown-item>
-                                    <a class="dropdown-item" href="#">
+                                    <a class="dropdown-item"  v-on:click="profile">
                                         Profile
                                     </a>
                                 </b-dropdown-item>
@@ -57,6 +61,9 @@
                 .then(response => {
                     window.location.replace('http://localhost:8000/');
                 });
+            },
+            profile: function(){
+                window.location="/profile";
             }
         }
     }

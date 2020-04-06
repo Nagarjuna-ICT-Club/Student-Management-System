@@ -5,7 +5,7 @@
             <meta name="csrf-token" content="{{ csrf_token() }}" />
             <title>SMS | Login</title>
             <link rel="shortcut icon" href="{{ asset('asset/img/logo.png') }}" type="image/x-icon">
-            <meta name="description" content="Latest updates and statistic charts">
+            <meta name="description" content="Student Managment System">
             <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
             <link href="{{ asset('asset/css/bootstrap.min.css') }}" rel="stylesheet" type="text/css" />
             <link href="{{ asset('asset/css/vendor.min.css')}}" rel="stylesheet" type="text/css" />

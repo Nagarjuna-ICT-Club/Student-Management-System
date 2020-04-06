@@ -1,8 +1,7 @@
 <template>
-    <div class="container">
         <div class="row">
             <div class="col-xl-8 col-md-11 col-sm-12 m-auto">
-                <div class="card">
+                <div class="card mt-5">
                     <b-card-header class="text-center">
                         Leave Application Form
                     </b-card-header>
@@ -22,7 +21,7 @@
                             </div>
                             <div class="form-group row">
                                 <div class="col-xl-6 col-md-6 col-sm-6">
-                                    <b-form-datepicker v-model="fields.from" :min="FromMin" locale="en" placeholder="Leave From Date" aria-required="true" calendar-width="300px"></b-form-datepicker>
+                                    <b-form-datepicker v-model="fields.from" :min="FromMin" locale="en" placeholder="Leave From Date" aria-required="true" calendar-width="300px" calender-left="3px"></b-form-datepicker>
                                          <p v-for="error in this.errors.from" :key="error.from" class="text-danger">
                                          {{ error || '' }}
                                         </p>
@@ -42,7 +41,6 @@
                 </div>
             </div>
         </div>
-    </div>
 </template>
 <script>
 export default {

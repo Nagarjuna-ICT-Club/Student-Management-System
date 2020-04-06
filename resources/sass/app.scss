@@ -143,17 +143,17 @@
 
 }
 .pp{
-    width: 50%;
-    height: 235px;
+    width: 125px;
+    height: 125px;
     background-position: center;
     margin: auto;
     background-repeat: no-repeat;
     background-size: cover;
-    border-radius: 20px;
+    border-radius: 50%;
 }
 
 .profile_info .user_name{
-    font-size: 30px;
+    font-size: 20px;
     display: block;
 }
 .topnav .dropdown-menu{
@@ -169,7 +169,6 @@
         z-index: 99;
 }
 .add_app i{
-    font-size: 45px;
     color: #25b58d;
 }
 .app-body{
@@ -196,7 +195,15 @@
     background: #fdfffd !important;
     height: 4px !important;
 }
-
+.b-form-datepicker .dropdown-menu{
+    left:-15px !important;
+}
+.nav-user{
+    float: right;
+}
+.profile-wrapper{
+    box-shadow: 1px 4px 10px -6px black;
+}
 @media (max-width: 576px) {
     .login-wrapper{
         max-width: 100% !important;
