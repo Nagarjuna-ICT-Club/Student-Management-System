@@ -134,7 +134,7 @@
             }
            $.ajax({
                method:"POST",
-               url:"{{ route('login') }}",
+               url:"login",
                data: data,
                beforeSend: function(){
                     $("#sms_lg_sub").html("Signing in ....")

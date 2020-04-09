@@ -8,8 +8,15 @@
                     </div>
 
                         <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 text-right">
-                             <a href="#" class="px-3"><i class="fas fa-bell">
-                                 <div class="notify" style="width:2px; height:3px;"></div></i></a>
+                            <b-dropdown toggle-class="text-decoration-none" no-caret class="px-4 notification_btn" >
+                                <template v-slot:button-content>
+                                    <i class="fas fa-bell"><span v-if="count!==0"><div class="notify"></div>
+                                    </span></i>
+                                </template>
+                                <b-dropdown-item aria-role="listitem" v-for="notif in this.notifications" :key="notif.id" v-bind:class="(notif.status==0)?'new':'old'">{{ notif.notification }}</b-dropdown-item>
+                                <b-dropdown-item href="/notifications" class="see_more">See more</b-dropdown-item>
+                                </b-dropdown>
+
                         <i class="fas fa-user"></i>
                         <b-nav-item-dropdown
                             id="my-nav-dropdown"
@@ -39,20 +46,21 @@
 <script>
     export default {
         props: {
-            user: ""
+            user: "",
+            id:"",
             },
-        // data() {
-        //     return {
-        //         user:" ",
-
-        //     }
-        // },
+        data() {
+            return {
+                count:0,
+                notifications:[],
+            }
+        },
         created() {
-            // axios
-            //     .get('http://localhost:8000/api/getUser')
-            //     .then(response => {
-            //         this.user = response.data.user;
-            //     });
+         axios.post(`http://sudeepmishra.com.np/api/my_notifications/${this.id}`)
+                        .then(response => {
+                            this.count = response.data.count;
+                            this.notifications = response.data.messages;
+                        });
         },
         methods: {
             logout: function () {

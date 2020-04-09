@@ -32,9 +32,9 @@
                     </div>
                         <div class="col-md-6 col-sm-12">
                             <p>Social</p><hr>
-                            <div class="social_links mt-3" v-if="profiles.fb!==null || profiles.gh!==null">
-                            <a href="#" class="btn btn-outline-primary " > Facebook <i class="fab fa-facebook-square"></i></a>
-                            <a href="#"  class="btn btn-outline-dark" > GitHub <i class="fab fa-github"></i></a>
+                            <div class="social_links mt-3">
+                            <a href="#" class="btn btn-outline-primary " v-if="profiles.fb!==null"> Facebook <i class="fab fa-facebook-square"></i></a>
+                            <a href="#"  class="btn btn-outline-dark" v-if="profiles.gh!==null"> GitHub <i class="fab fa-github"></i></a>
                             </div>
                             </div>
                         </div>
@@ -50,12 +50,15 @@ export default {
           $(document).ready(function(){
         setTimeout(function(){
             $('.pre_loader').hide()
-        },500)
+        },2000)
     });
     },
     data(){
         return{
-            profiles:{},
+            profiles:{
+                fb:null,
+                gh:null,
+            },
             user:{},
             api:"",
         }
@@ -70,7 +73,6 @@ export default {
                     // console.log(response.data.data)
                     this.profiles = response.data.profile;
                     this.user=response.data;
-                    console.log(this.user)
                 });
             });
     }

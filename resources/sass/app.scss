@@ -171,14 +171,12 @@
 .add_app i{
     color: #25b58d;
 }
-.app-body{
-    line-height: 2.5;
-}
+
 .bg-approved{
-    background-color: #47e061a8;;
+    color: #47e061a8;;
 }
 .bg-pending{
-    background-color: #74b9ff;;;
+    color: #74b9ff;;;
 }
 #nprogress .spinner-icon {
     width: 20px !important;
@@ -202,8 +200,145 @@
     float: right;
 }
 .profile-wrapper{
-    box-shadow: 1px 4px 10px -6px black;
+    box-shadow: 7px 9px 47px -23px rgba(112, 161, 255, 0.45);
 }
+.notify{
+    width: 7px;
+    height: 7px;
+    background: #ff3b39;
+    border-radius: 50%;
+    content: close-quote;
+    position: absolute;
+    top: 6px;
+    right: -1px;
+}
+.create_app{
+    box-shadow: 7px 9px 47px -23px rgba(112, 161, 255, 0.45);
+}
+.create_app .card{
+    border: none;
+}
+.create_app .card .card-header{
+    background-color: transparent;
+}
+
+.notification_btn button{
+    background: none;
+    padding: 0;
+    border: none;
+}
+.notification_btn button:hover,  .notification_btn button:active, .notification_btn button:focus{
+    background: none !important;
+    border: none !important;
+    box-shadow: none !important;
+}
+
+.notification_btn .btn-secondary:not(:disabled):not(.disabled):active, .btn-secondary:not(:disabled):not(.disabled).active, .show > .btn-secondary.dropdown-toggle {
+    color: #fff;
+     background-color:transparent;
+      border:none;
+}
+
+.notification_btn .dropdown-menu{
+    width: 100%;
+    background-color: white;
+    padding: 0px;
+    top: 15px !important;
+    left: -62px !important;
+    min-width: 214px;
+    box-shadow: 7px 9px 47px -23px rgba(112, 161, 255, 0.45);
+
+}
+
+.notification_btn .dropdown-menu a{
+    color: black;
+    color: black;
+    font-size: 12px;
+    border-bottom: 1px solid #6161614d;
+    white-space: pre-line;
+}
+
+.notification_btn .dropdown-menu .new{
+    background:#b5b5b58a;
+}
+.notification_btn .dropdown-menu .see_more a{
+    border:none;
+}
+
+.notification_btn .dropdown-toggle::after{
+    display: none;
+}
+.app_types{
+    box-shadow: 7px 9px 47px -23px rgba(112, 161, 255, 0.45);
+}
+.app_types .nav-tabs .nav-item{
+    margin-bottom: 0 !important;
+}
+
+.app_types .nav-tabs .nav-link.active, .nav-tabs .nav-item.show .nav-link {
+    border:none;
+    color: coral !important;
+}
+.app_types .nav-tabs .nav-link:hover, .nav-tabs .nav-link:focus {
+    border-color: #e9ecef #e9ecef #dee2e6;
+}
+.app-body{
+    display: flex;
+    padding: 34px 0px;
+}
+.app-body .profile{
+    width: 40%;
+    float: left;
+    max-width: max-content;
+}
+.app-body .info{
+    width: 80%;
+    float: right;
+    margin-left: 20px;
+}
+.app-body .pp{
+    width: 70px !important;
+    height: 70px !important;
+    margin: 0 !important;
+}
+.info .badge{
+    float: right;
+}
+.info h2{
+    font-size: 21px;
+    font-weight: 500;
+}
+.info .btn-primary{
+    width: 140px;
+    border: 0;
+    border-radius: 0;
+    background: #74b9ff;
+    font-size: 12px;
+}
+.info .btn-danger{
+    width: 140px;
+    border: 0;
+    border-radius: 0;
+    background-color: #f15766;
+    font-size: 12px;
+}
+.app-body .desc{
+    margin: 20px 0px;
+
+}
+.app-body .desc p{
+    font-size:12px;
+}
+.info .heading h2{
+    font-size: 14px;
+}
+.info .heading .title{
+    font-weight: 500;
+}
+.info .heading .name{
+    font-weight: 100;
+}
+
 @media (max-width: 576px) {
     .login-wrapper{
         max-width: 100% !important;

@@ -1,9 +1,11 @@
 <template>
         <div class="row">
-            <div class="col-xl-8 col-md-11 col-sm-12 m-auto">
-                <div class="card mt-5">
-                    <b-card-header class="text-center">
-                        Leave Application Form
+            <div class="col-xl-12 col-md-12 col-sm-12 create_app">
+                <div class="card mt-3">
+                    <b-card-header class="d-flex">
+                        <p class="text-left col-6">Leave Application Form</p>
+                 <router-link :to="{ name: 'home_app'}" class="col-6 text-right"><i class="fas fa-arrow-left"></i></router-link>
+
                     </b-card-header>
                     <b-card-body class="">
                         <form @submit.prevent="submit">

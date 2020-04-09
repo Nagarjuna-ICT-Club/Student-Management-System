@@ -12,7 +12,7 @@
                 </div>
                 <div class="card-body profile_body bg-white">
                     <div class="container">
-                        <form method="post" id="profile_ed_form">
+                        <form @submit.prevent="update">
                             <div class="row">
                             <div class="col-md-6 col-sm-6">
                                 <div class="form-group">
@@ -56,6 +56,7 @@ export default {
         return{
             profile:{},
             username:String,
+            errors:{}
         }
     },
     created(){
@@ -64,6 +65,42 @@ export default {
                 .then(response => {
                     this.profile = response.data;
                 });
+
+                  axios.interceptors.request.use( config=>{
+                    NProgress.start()
+                    return config;
+                })
+                axios.interceptors.response.use(response => {
+                    NProgress.done()
+                    return response;
+            })
+    },
+    methods: {
+        update(){
+            this.errors = {};
+            axios.post('http://sudeepmishra.com.np/api/update_user_profile',this.profile)
+            .then(response => {
+                // console.log(response);
+                if(response.data.status==200){
+                    toastr.options = {
+                        "newestOnTop": true,
+                        "progressBar": true,
+                        "showDuration": "200",
+                        "hideDuration": "1000",
+                        "timeOut": "2000",
+                    }
+                    toastr["success"](response.data.message);
+
+                    this.$router.push({name: 'profile'})
+                }
+            }).catch( error => {
+                // console.log(error.response.data.errors.from);
+                if (error.response.status===422) {
+                    this.errors = error.response.data.errors || {};
+                     toastr["error"](response.data.message);
+                }
+            }).finally(() => this.loading = false);
+        },
     }
 }
 </script>

@@ -3,11 +3,15 @@
 </template>
 <script>
 export default {
-    //    data() {
-    //         return {
-    //             apps:[],
-    //             date: new Date(),
-    //         }
-    //     },
+   created(){
+         axios.interceptors.request.use( config=>{
+                    NProgress.start()
+                    return config;
+                })
+            axios.interceptors.response.use(response => {
+                    NProgress.done()
+                    return response;
+            })
+   }
 }
 </script>
