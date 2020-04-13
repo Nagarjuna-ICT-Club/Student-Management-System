@@ -8,7 +8,7 @@
                     </div>
 
                         <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 text-right">
-                            <b-dropdown toggle-class="text-decoration-none" no-caret class="px-4 notification_btn" >
+                            <b-dropdown toggle-class="text-decoration-none" no-caret class="px-4 notification_btn" @click="notif_zero">
                                 <template v-slot:button-content>
                                     <i class="fas fa-bell"><span v-if="count!==0"><div class="notify"></div>
                                     </span></i>
@@ -72,6 +72,10 @@
             },
             profile: function(){
                 window.location="/profile";
+            },
+            notif_zero: function(){
+                this.count=0;
+                $('.notify').hide();
             }
         }
     }

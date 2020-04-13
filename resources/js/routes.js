@@ -4,6 +4,7 @@ import AllApp from './views/AllApp.vue';
 import Message from './views/Message/Message.vue';
 import Profile from './views/Profile/Profile.vue';
 import EditProfile from './views/Profile/EditProfile.vue';
+import EditApp from './views/EditApp.vue';
 // import AddBook from './views/AddBook.vue';
 // import EditBook from './views/EditBook.vue';
 // import Login from './views/Login.vue';
@@ -26,6 +27,11 @@ export const router = new VueRouter({
         name: 'add_app',
         path: '/application/add_app',
         component: CreateApp
+    },
+    {
+        name: 'EditApplication',
+        path: '/application/edit/:app_id',
+        component: EditApp
     },
     {
         name: 'messages',

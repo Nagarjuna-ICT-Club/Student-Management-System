@@ -35,6 +35,8 @@
                             <div class="social_links mt-3">
                             <a href="#" class="btn btn-outline-primary " v-if="profiles.fb!==null"> Facebook <i class="fab fa-facebook-square"></i></a>
                             <a href="#"  class="btn btn-outline-dark" v-if="profiles.gh!==null"> GitHub <i class="fab fa-github"></i></a>
+                            <a href="#"  class="btn btn-outline-dark" v-if="profiles.li!==null"> Linkedin <i class="fab fa-github"></i></a>
+
                             </div>
                             </div>
                         </div>

@@ -28,15 +28,22 @@
 
 <script>
   export default {
-
+        props: ['user'],
     data(){
         return {
             messages:[],
+             newMessage: '',
         }
     },
     created(){
         this.fetchMessages();
 
+    },
+    mounted(){
+        Echo.channel('chat').listen('MessageSent',(e)=>{
+            this.messages = e.messages;
+            console.log(e);
+        })
     },
     methods: {
         fetchMessages() {
@@ -44,6 +51,23 @@
                 this.messages = response.data;
             });
         },
+         sendMessage() {
+                this.$emit('messagesent', {
+                    user: this.user,
+                    message: this.newMessage
+                });
+
+                this.newMessage = ''
+            },
+        addMessage(message) {
+            this.messages.push(message);
+            axios.post('/chat/messages', message).then(response => {
+              console.log(response.data);
+            });
+        }
     }
   };
+
 </script>
+
+

@@ -11179,7 +11179,7 @@ a.text-dark:focus {
 }
 
 .notification_btn .dropdown-menu .new {
-  background: #b5b5b58a;
+  background: #e8e8e852;
 }
 
 .notification_btn .dropdown-menu .see_more a {
@@ -11263,6 +11263,10 @@ a.text-dark:focus {
   margin: 20px 0px;
 }
 
+.application-wrapper .app-body {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
 .app-body .desc p {
   font-size: 12px;
 }
@@ -11277,6 +11281,10 @@ a.text-dark:focus {
 
 .info .heading .name {
   font-weight: 100;
+}
+
+.info .heading .name span {
+  float: right;
 }
 
 @media (max-width: 576px) {

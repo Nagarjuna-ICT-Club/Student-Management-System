@@ -259,7 +259,7 @@
 }
 
 .notification_btn .dropdown-menu .new{
-    background:#b5b5b58a;
+    background:#e8e8e852;
 }
 .notification_btn .dropdown-menu .see_more a{
     border:none;
@@ -326,6 +326,9 @@
     margin: 20px 0px;
 
 }
+.application-wrapper .app-body{
+    border-bottom:1px solid rgba(0, 0, 0, 0.1);;
+}
 .app-body .desc p{
     font-size:12px;
 }
@@ -337,6 +340,9 @@
 }
 .info .heading .name{
     font-weight: 100;
+}
+.info .heading .name span{
+    float: right;
 }
 
 @media (max-width: 576px) {
