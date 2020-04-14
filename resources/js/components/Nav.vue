@@ -56,7 +56,11 @@
             }
         },
         created() {
-         axios.post(`http://sudeepmishra.com.np/api/my_notifications/${this.id}`)
+         axios.post(`http://sudeepmishra.com.np/api/my_notifications/${this.id}`,{
+             params:{
+                 _limit:4
+             }
+         })
                         .then(response => {
                             this.count = response.data.count;
                             this.notifications = response.data.messages;

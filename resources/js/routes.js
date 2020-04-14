@@ -5,6 +5,8 @@ import Message from './views/Message/Message.vue';
 import Profile from './views/Profile/Profile.vue';
 import EditProfile from './views/Profile/EditProfile.vue';
 import EditApp from './views/EditApp.vue';
+import Setting from './views/Setting/Setting.vue';
+import ChangePwd from './views/Setting/ChangePwd.vue';
 // import AddBook from './views/AddBook.vue';
 // import EditBook from './views/EditBook.vue';
 // import Login from './views/Login.vue';
@@ -47,7 +49,18 @@ export const router = new VueRouter({
         name: 'profileUpdate',
         path: '/profile/update/:user_id/:user_name',
         component: EditProfile
+    },
+    {
+        name: 'Settings',
+        path: '/settings/home',
+        component: Setting
+    },
+    {
+        name: 'ChangePwd',
+        path: '/settings/ChangePwd',
+        component: ChangePwd
     }
+
 
 ]});
 

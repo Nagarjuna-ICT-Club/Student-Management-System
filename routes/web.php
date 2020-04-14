@@ -50,3 +50,12 @@ Route::prefix('profile')->name('profile.')->group(function () {
     Route::get('/',function () { return view('profile.profile'); })->where('any', '.*');
     Route::post('/update/{id}','HomeController@EditProfile');
 });
+
+
+Route::prefix('settings')->name('settings.')->group(function () {
+    Route::get('/{any}',function () { return view('settings'); })->where('any', '.*');
+    Route::get('/',function () { return view('settings'); })->where('any', '.*');
+    // Route::post('/update/{id}','HomeController@EditProfile');
+});
+
+Route::post('/password/update','PasswordController@update');

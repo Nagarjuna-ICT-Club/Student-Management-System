@@ -43,6 +43,9 @@
                     <li>
                         <i class="far fa-user"></i> Faculty
                     </li>
+                     <li>
+                        <a href="/settings/home"><i class="fas fa-users-cog"></i> Setting</a>
+                    </li>
                 </ul>
             </nav>
             <div id="content">
