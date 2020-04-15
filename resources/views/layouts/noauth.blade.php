@@ -26,7 +26,7 @@
     <body class="container">
         <!-- header starts -->
         <header>
-            <a href="#" class="backPage"><i class="fas fa-arrow-left"></i> Back to page</a>
+            <a href="#" onclick="javascript:history.go(-1)" class="backPage"><i class="fas fa-arrow-left"></i> Back to page</a>
         </header>
         <!-- header ends -->
         @yield('content')
